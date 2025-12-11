@@ -237,6 +237,7 @@ p {
     outline: none;
     text-align: center;
     color: var(--white);
+    cursor: pointer;
 }
 
 .hero_title {
@@ -297,6 +298,7 @@ p {
     align-items: center;
     padding-left: 15px;
     padding-right: 5px;
+    cursor: pointer;
 }
 
 .info_but_wh {
@@ -408,4 +410,110 @@ p {
     line-height: 16px;
     letter-spacing: 0%;
     color: var(--white);
+}
+
+.white_cub {
+    display: flex;
+    position: absolute;
+    top: 825px;
+    z-index: 3;
+}
+
+.left_cub,
+.right_cub {
+    border-radius: 50px;
+    background-color: var(--white);
+    width: 804px;
+    height: 359px;
+}
+
+.cub_container {
+    display: flex;
+    justify-content: center;
+}
+
+.cub_title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 5;
+    top: 825px;
+    
+    margin-top: 150px;
+}
+
+.cub_title p {
+    font-size: 13.6px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--blue);
+    margin-left: 18px;
+}
+
+.cub_title h2 {
+    margin: 0;
+    width: 855px;
+    height: 135px;
+    margin-left: 110px;
+    margin-top: 26px;
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+
+.cub_text {
+    color: var(--deep-blue);
+}
+
+/* services */
+
+.services_container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+    top: 1200px;
+}
+
+.services {
+    
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.service_line_1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service_item_1 {
+    background-image: url(../images/image\ 1.png);
+    border-radius: 30px;
+    object-fit: cover;
+    width: 496.33px;
+    height: 515.61px;
+}
+
+.service_item_2 {
+    background-image: url(../images/image\ 2.png);
+    border-radius: 30px;
+    object-fit: cover;
+    width: 496.33px;
+    height: 515.61px;
+}
+
+.service_item_3 {
+    background-image: url(../images/image\ 3.png);
+    border-radius: 30px;
+    object-fit: cover;
+    width: 496.33px;
+    height: 515.61px;
+}
+
+.service_text h3,
+.service_text p {
+    margin: 0;
+    color: var(--white);
+    z-index: 6;
 }
