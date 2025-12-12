@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 140px;
+        height: 140px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        width: 100px;
+        height: 100px;
+        font-size: 16px;
+    }
+    
+    .carousel-controls {
+        justify-content: center;
+    }
+}
