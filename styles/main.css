@@ -766,6 +766,7 @@ color: var(--white);
 
 .cub_title_swiper h2 {
     width: 850px;
+    text-align: left;
 }
 
 .cub_title_swiper p {
