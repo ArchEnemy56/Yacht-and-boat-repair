@@ -360,6 +360,14 @@ p {
     line-height: 100%;
 }
 
+.arrow-icon {
+  transition: var(--tr); /* Плавный переход (опционально) */
+}
+
+.arrow-icon:hover {
+  transform: rotate(45deg); /* Поворот на 45° по часовой стрелке */
+}
+
 .but_wh_text {
     color: var(--dark-blue);
     letter-spacing: 0.3px;
