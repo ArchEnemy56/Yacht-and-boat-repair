@@ -76,6 +76,37 @@ p {
     color: var(--light);
 }
 
+.btn-up {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/svg/btn-up.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: transparent;
+    border: 1px solid var(--deep-blue);
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--tr);
+    border-radius: 100%;
+}
+
+.btn-up.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.btn-up.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 /* Header */
 
 .header_info {
