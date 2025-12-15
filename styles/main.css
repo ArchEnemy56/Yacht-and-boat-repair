@@ -100,7 +100,7 @@ p {
     cursor: pointer;
     position: fixed;
     bottom: 50px;
-    right: 215px;
+    right: 2vw;
     opacity: 0;
     visibility: hidden;
     transition: var(--tr);
@@ -334,8 +334,7 @@ p {
 .hero_line_3 {
     display: flex;
     justify-content: space-between;
-    margin-left: 45px;
-    margin-right: 45px;
+    margin: 0 auto;
     margin-top: 35px;
     width: 100%;
     max-width: 1500px;
@@ -383,11 +382,12 @@ p {
 }
 
 .arrow-icon {
-  transition: var(--tr); /* Плавный переход (опционально) */
+    cursor: pointer;
+    transition: var(--tr);
 }
 
 .arrow-icon:hover {
-  transform: rotate(45deg); /* Поворот на 45° по часовой стрелке */
+    transform: rotate(45deg); 
 }
 
 .but_wh_text {
@@ -488,7 +488,7 @@ p {
 .white_cub {
     display: flex;
     top: 825px;
-    margin-top: -78px;
+    margin-top: -115px;
 }
 
 .left_cub,
@@ -520,8 +520,8 @@ p {
 
 .cub_title h2 {
     margin: 0;
-    width: 855px;
-    height: 135px;
+    width: 100%;
+    max-width: 855px;
     margin-left: 110px;
     margin-top: 26px;
     letter-spacing: 0.3px;
@@ -544,6 +544,7 @@ p {
 
     padding-left: 40px;
     padding-right: 40px;
+    width: 100%;
 }
 
 .service_line_1 {
@@ -564,7 +565,8 @@ p {
     overflow: hidden;
     border-radius: 30px;
     object-fit: cover;
-    width: 496.33px;
+    width: 100%;
+    max-width: 496.33px;
     height: 515.61px;
 }
 
@@ -616,6 +618,7 @@ p {
 .service_line_2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .service_line_2_left {
@@ -624,9 +627,11 @@ p {
     flex-direction: column;
     justify-content: space-between;
     background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
     border-radius: 30px;
-    width: 738px;
+    width: 100%;
+    max-width: 738px;
     height: 569px;
 }
 
@@ -642,7 +647,8 @@ p {
     justify-content: space-between;
     overflow: hidden;
     border-radius: 30px;
-    width: 766px;
+    width: 100%;
+    max-width: 766px;
     height: 274px;
 }
 
@@ -653,7 +659,8 @@ p {
     justify-content: space-between;
     overflow: hidden;
     border-radius: 30px;
-    width: 766px;
+    width: 100%;
+    max-width: 766px;
     height: 274px;
 }
 
@@ -676,7 +683,6 @@ p {
     flex-direction: column;
     align-items: center;
     width: 520px;
-    height: 90px;
     margin-bottom: 50px;
 }
 
@@ -693,7 +699,6 @@ p {
 
 .cater_banner {
     display: flex;
-    margin-top: 90px;
     margin-left: 115px;
     justify-content: center;
     margin-right: 105px;
@@ -707,7 +712,8 @@ p {
     background-position: center center;
     display: flex;
     border-radius: 20px 0 0 20px;
-    width: 736px;
+    width: 100%;
+    max-width: 736px;
     margin-right: -25px;
 }
 
@@ -720,7 +726,8 @@ p {
     display: flex;
     flex-direction: column;
     background-color: var(--deep-blue);
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     border-radius: 20px;
     padding: 25px 25px 45px 45px;
 }
@@ -739,7 +746,8 @@ p {
 }
 
 .cater_title {
-    width: 433px;
+    width: 100%;
+    max-width: 433px;
     font-size: 31.1px;
     font-weight: 500;
     line-height: 34.56px;
@@ -760,11 +768,11 @@ p {
 }
 
 .cater_line_2 p {
-    width: 456px;
+    width: 100%;
+    max-width: 456px;
     font-size: 15.4px;
     font-weight: 400;
     line-height: 18px;
-    letter-spacing: 0%;
     text-align: left;
     color: var(--white);
 
@@ -799,7 +807,6 @@ p {
     font-size: 12.9px;
     font-weight: 500;
     line-height: 15px;
-    letter-spacing: 0%;
     color: var(--white);
 }
 
@@ -845,30 +852,21 @@ h2 {
 .carousel-controls {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
     margin-bottom: 10px;
 }
 
 /* Стили кнопок-стрелок */
 .carousel-btn {
-    width: 40px;
-    height: 40px;
-    border: none;
     border-radius: 50%;
-    background-color: #1E88E5;
-    /* Синий цвет */
-    color: white;
-    font-size: 18px;
+    background-color: var(--white);
     cursor: pointer;
     display: flex;
-    justify-content: center;
-    align-items: center;
     transition: background-color 0.3s, transform 0.2s;
     outline: none;
+    border: none;
 }
 
 .carousel-btn:hover {
-    background-color: #1565C0;
     transform: scale(1.1);
 }
 
@@ -1044,7 +1042,8 @@ footer {
 }
 
 .foot_blur {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 290px;
     border-radius: 30px;
     backdrop-filter: blur(15px);
@@ -1058,7 +1057,8 @@ footer {
 .foot_info {
     display: flex;
     flex-direction: column;
-    width: 399px;
+    width: 100%;
+    max-width: 399px;
     height: 108px;
     gap: 12px;
 }
@@ -1070,6 +1070,7 @@ footer {
     font-size: 28px;
     font-weight: 700;
     line-height: 34px;
+    text-align: center;
 }
 
 .foot_info p {
@@ -1078,6 +1079,7 @@ footer {
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;
+    text-align: center;
 }
 
 .foot_index {
@@ -1128,7 +1130,7 @@ footer {
 .foot_rules {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .rules {display: flex;}
@@ -1152,10 +1154,11 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0;
+    opacity: 1;
 }
 
 .checkbox.checked::after {
+    color: var(--blue);
     opacity: 1;
 }
 
@@ -1428,6 +1431,9 @@ gap: 20px;
 
 .quality_right_1 {
     background-image: url(../images/quality_right_1.png);
+    background-size: cover;
+    width: 100%;
+    max-width: 730px;
 }
 
 .quality_right_2 {
