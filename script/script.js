@@ -60,30 +60,135 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Button Up
 
-window.onscroll = function () { scrollFunction() };
 
-const upbuttons = document.getElementById("btnUp");
 
-for (const upbutton of upbuttons) {
-    upbutton.addEventListener("click", clickHandler);
-}
+// карусель отзывы
 
-function clickHandler(e) {
-    e.preventDefault();
-    const href = this.getAttribute("href");
-
-    document.querySelector(href).scrollIntoView({
-        behavior: "smooth"
-    });
-}
-
-function scrollFunction() {
-    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-        document.getElementById('btnUp').className = 'btn-up visible';
-    } else {
-        document.getElementById('btnUp').className = 'btn-up hidden';
+document.addEventListener('DOMContentLoaded', function() {
+    // Инициализация переменных
+    const sliderTrack = document.querySelector('.slider-track');
+    const cards = document.querySelectorAll('.card_our');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.slider-dots');
+    
+    // Параметры слайдера
+    let currentSlide = 0;
+    let cardsPerView = 3;
+    let cardWidth = 0;
+    let gap = 30;
+    let step = 0;
+    let maxSlides = 0;
+    
+    // Создаем точки навигации
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        const dotsCount = Math.ceil(cards.length / cardsPerView);
+        
+        for (let i = 0; i < dotsCount; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+            });
+            
+            dotsContainer.appendChild(dot);
+        }
     }
-}
-
-//popup
-
+    
+    // Рассчитываем количество карточек в зависимости от ширины экрана
+    function calculateCardsPerView() {
+        const screenWidth = window.innerWidth;
+        
+        if (screenWidth <= 768) {
+            cardsPerView = 1;
+        } else if (screenWidth <= 1024) {
+            cardsPerView = 2;
+        } else {
+            cardsPerView = 3;
+        }
+        
+        maxSlides = Math.ceil(cards.length / cardsPerView) - 1;
+        updateSlider();
+        createDots();
+    }
+    
+    // Обновляем параметры слайдера
+    function updateSlider() {
+        if (cards.length > 0) {
+            // Получаем актуальную ширину карточки
+            cardWidth = cards[0].offsetWidth;
+            step = (cardWidth + gap) * cardsPerView;
+            
+            // Обновляем состояние кнопок
+            updateButtons();
+            updateDots();
+        }
+    }
+    
+    // Переход к определенному слайду
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        const translateX = -currentSlide * step;
+        sliderTrack.style.transform = `translateX(${translateX}px)`;
+        
+        updateButtons();
+        updateDots();
+    }
+    
+    // Обновление состояния кнопок
+    function updateButtons() {
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide >= maxSlides;
+    }
+    
+    // Обновление активной точки
+    function updateDots() {
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            if (index === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    // Обработчики событий для кнопок
+    prevBtn.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            goToSlide(currentSlide);
+        }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        if (currentSlide < maxSlides) {
+            currentSlide++;
+            goToSlide(currentSlide);
+        }
+    });
+    
+    // Обработчик изменения размера окна
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            calculateCardsPerView();
+        }, 200);
+    });
+    
+    // Инициализация слайдера после полной загрузки страницы
+    window.addEventListener('load', () => {
+        calculateCardsPerView();
+    });
+    
+    // Также инициализируем сразу на случай, если страница уже загружена
+    if (document.readyState === 'complete') {
+        calculateCardsPerView();
+    } else {
+        calculateCardsPerView();
+    }
+});
