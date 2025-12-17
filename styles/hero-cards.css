@@ -1,0 +1,83 @@
+/* Hero Cards Styling */
+.hero_cards {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.hero_cards .card {
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* First card style */
+.hero_cards .hc_1 {
+    background-color: rgba(197, 187, 180, 0.7);
+}
+
+/* Second card style */
+.hero_cards .hc_2 {
+    background-color: rgba(101, 110, 110, 0.7);
+}
+
+/* Third card style */
+.hero_cards .hc_3 {
+    background-color: rgba(88, 100, 107, 0.7);
+}
+
+/* Card photo container */
+.hero_cards .card_photo {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* Card images */
+.hero_cards .card_photo img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Card headings */
+.hero_cards h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* Card text */
+.hero_cards p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 5px 0;
+}
+
+/* Link in the second card */
+.hc_2_text_2 {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Brands image in the third card */
+.brands img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
