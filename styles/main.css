@@ -1097,7 +1097,7 @@ footer {
 .foot_item_1,
 .foot_item_2 {
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .foot_item_3 {
@@ -1904,9 +1904,136 @@ footer {
 }
 
 .consult_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     background-image: url(../images/consult.png);
     border-radius: 20px;
     width: 100%;
     max-width: 1523px;
     height: 347px;
+    align-items: center;
+}
+
+.tech_blur {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    margin-left: 120px;
+}
+
+.tech_info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    height: 265px;
+    gap: 12px;
+    justify-content: space-between;
+    margin-left: 42px;
+}
+
+.tech_info h3 {
+    font-family: "Onest", sans-serif;
+    color: var(--white);
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+.tech_info p {
+    font-size: 13.6px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--white);
+}
+
+.tech_info_text {
+    font-size: 15.4px;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--white);
+}
+
+.tech_index {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.tech_rules {
+    display: flex;
+}
+
+.tech_rules p,
+.tech_rules a {
+    color: var(--dark-blue);
+    font-family: Onest, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 17px;
+    text-align: left;
+}
+
+.tech_item {
+    width: 100%;
+    max-width: 350px;
+}
+
+.t_i_t {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Кнопка прокрутки вверх */
+.btn-up {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--white);
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--tr);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/arrow-up.svg');
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-up:hover {
+    background-color: var(--light);
+    transform: translateY(-5px);
+}
+
+.btn-up.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .btn-up {
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        background-size: 20px;
+    }
 }

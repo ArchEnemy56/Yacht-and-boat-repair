@@ -46,7 +46,9 @@
       <div class="head_search">
         <div class="head_1">
           <img src="images/svg/search.svg" alt="Поиск" loading="lazy">
-          <input class="input_text" type="text" placeholder="Поиск">
+          <label>
+            <input class="input_text" type="text" placeholder="Поиск">
+          </label>
         </div>
       </div>
     </div>
@@ -58,7 +60,7 @@
     <div class="nav_menu">
       <nav class="left_nav">
         <div class="yacht">
-          <p><a href="/">яхт-сервис «маяк»</a></p>
+          <p><a href="index.html">яхт-сервис «маяк»</a></p>
         </div>
         <ul class="nav_line">
           <li class="nav_item"><a href="about.html" class="nav_link">О компании</a></li>
@@ -290,7 +292,45 @@
     </div>
 </div>
 
-<div class="container consult_container"></div>
+<div class="container consult_container">
+
+  <div class="tech_info">
+    <p>(Оставить заявку)</p>
+    <div class="t_i_t">
+    <h3>Получите консультацию</h3>
+    <p class="tech_info_text">Мы всегда готовы помочь с подбором нужных запчастей и оборудования. Оставьте заявку — специалисты Яхт-сервиса «Маяк» свяжутся с вами и подберут оптимальное решение.</p>
+    </div>
+  </div>
+
+  <div class="tech_blur">
+    <div class="tech_index">
+      <div class="foot_item_1 tech_item">
+        <label>
+          <input class="foot_ps" type="text" placeholder="Имя">
+        </label>
+      </div>
+      <div class="foot_item_2 tech_item">
+        <label>
+          <input class="foot_ps" type="text" placeholder="Телефон">
+        </label>
+      </div>
+      <div class="foot_rules">
+        <div class="checkbox" onclick="this.classList.toggle('checked')">
+        </div>
+        <div class="tech_rules">
+          <p>Я ознакомлен и согласен
+          <a href="">политикой</a>
+          <a href="">обработки персональных данных</a></p>
+        </div>
+      </div>
+      <div class="foot_item_3">
+        <p>Оставить заявку</p>
+        <img class="arrow-icon" src="images/svg/arr-blue-1.svg" alt="">
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <div class="contacts">
   <div class="contacts_left">
@@ -315,10 +355,14 @@
       </div>
       <div class="foot_index">
         <div class="foot_item_1">
-          <input class="foot_ps" type="text" placeholder="Имя">
+          <label>
+            <input class="foot_ps" type="text" placeholder="Имя">
+          </label>
         </div>
         <div class="foot_item_2">
-          <input class="foot_ps" type="text" placeholder="Телефон">
+          <label>
+            <input class="foot_ps" type="text" placeholder="Телефон">
+          </label>
         </div>
         <div class="foot_item_3">
           <p>Оставить заявку</p>
@@ -347,7 +391,8 @@
   </div>
 </footer>
 
-<script src="script/script.js"></script>
+    <a href="#topMain" class="btn-up" id="btnUp"></a>
+    <script src="script/script.js"></script>
 </body>
 
 </html>

@@ -192,3 +192,26 @@ document.addEventListener('DOMContentLoaded', function() {
         calculateCardsPerView();
     }
 });
+
+// Кнопка прокрутки вверх
+document.addEventListener('DOMContentLoaded', function() {
+    const btnUp = document.getElementById('btnUp');
+    
+    // Показываем/скрываем кнопку при прокрутке страницы
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            btnUp.classList.add('active');
+        } else {
+            btnUp.classList.remove('active');
+        }
+    });
+    
+    // Плавная прокрутка вверх при клике на кнопку
+    btnUp.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
