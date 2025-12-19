@@ -51,6 +51,7 @@ p {
 .container {
     max-width: 1600px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .title_h1 {
@@ -384,6 +385,10 @@ p {
     line-height: 100%;
 }
 
+.line_3_but_wh .but_wh_text {
+    color: var(--blue);
+}
+
 .arrow-icon {
     cursor: pointer;
     transition: var(--tr);
@@ -496,10 +501,10 @@ p {
 
 .left_cub,
 .right_cub {
-    border-radius: 50px;
+    border-radius: 50px 50px 0 0;
     background-color: var(--white);
     width: 804px;
-    height: 359px;
+    height: 150px;
 }
 
 .cub_container {
@@ -543,9 +548,6 @@ p {
 }
 
 .services {
-
-    padding-left: 40px;
-    padding-right: 40px;
     width: 100%;
 }
 
@@ -564,16 +566,15 @@ p {
     justify-content: space-between;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: cover;
     overflow: hidden;
     border-radius: 30px;
     object-fit: cover;
     width: 100%;
-    max-width: 496.33px;
     height: 515.61px;
 }
 
 .service_item_1 {
-    position: relative;
     background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 1.png);
 }
 
@@ -634,7 +635,7 @@ p {
     overflow: hidden;
     border-radius: 30px;
     width: 100%;
-    max-width: 738px;
+    max-width: 790px;
     height: 569px;
 }
 
@@ -646,24 +647,28 @@ p {
 .service_line_2_right_bottom {
     background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 6.png);
     display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
     border-radius: 30px;
     width: 100%;
-    max-width: 766px;
+    max-width: 790px;
     height: 274px;
 }
 
 .service_line_2_right_top {
     background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 5.png);
     display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
     border-radius: 30px;
     width: 100%;
-    max-width: 766px;
+    max-width: 790px;
     height: 274px;
 }
 
@@ -682,6 +687,7 @@ p {
 /* service2 */
 
 .cub_title_2 {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -834,11 +840,11 @@ p {
 .cub_title_swiper {
     display: flex;
     justify-content: space-around;
-    padding-right: 40px;
 }
 
 .cub_title_swiper h2 {
-    width: 850px;
+    width: 100%;
+    max-width: 850px;
     text-align: left;
 }
 
@@ -1052,7 +1058,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     padding: 30px 20px;
 }
 
@@ -1061,8 +1066,8 @@ footer {
     flex-direction: column;
     width: 100%;
     max-width: 399px;
-    height: 108px;
     gap: 12px;
+    margin: 0 auto;
 }
 
 .foot_info h3 {
@@ -1523,8 +1528,8 @@ footer {
     max-width: 244px;
     height: 320px;
     border-radius: 23px;
-    padding: 12px;
     gap: 14px;
+    padding: 12px;
 }
 
 .why_1,
@@ -1558,8 +1563,11 @@ footer {
     border-radius: 23px;
     overflow: hidden;
     width: 100%;
-    max-width: 245px;
     height: 170px;
+}
+.why_cards_item_img img {
+    width: 100%;
+    height: 100%;
 }
 
 .why_info {
@@ -1590,7 +1598,7 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.why h3 {
+.why_line_h3 {
     font-size: 31px;
     font-weight: 700;
     line-height: 22px;
