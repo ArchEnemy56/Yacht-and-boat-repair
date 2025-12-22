@@ -211,3 +211,71 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Элементы модального меню
+    const modalMenu = document.getElementById('modalMenu');
+    const burgerMenuBtn = document.getElementById('burger_menuBtn');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    // Функция для открытия модального меню
+    function openModalMenu() {
+        console.log('Opening modal menu'); // Логируем открытие
+        if (modalMenu) {
+            modalMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        } else {
+            console.error('Modal menu element not found');
+        }
+    }
+
+    // Функция для закрытия модального меню
+    function closeModalMenu() {
+        console.log('Closing modal menu'); // Логируем закрытие
+        if (modalMenu) {
+            modalMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Обработчики событий
+    if (burgerMenuBtn) {
+        console.log('Burger button found'); // Проверяем, что кнопка найдена
+        burgerMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Burger button clicked'); // Логируем клик
+            openModalMenu();
+        });
+    } else {
+        console.error('Burger button not found');
+    }
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeModalMenu);
+    } else {
+        console.error('Close button not found');
+    }
+
+    // Закрытие модального окна при клике вне его области
+    if (modalMenu) {
+        modalMenu.addEventListener('click', function(e) {
+            if (e.target === modalMenu) {
+                closeModalMenu();
+            }
+        });
+    }
+
+    // Закрытие модального окна при нажатии клавиши Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modalMenu && modalMenu.classList.contains('active')) {
+            closeModalMenu();
+        }
+    });
+
+    // Обработка кликов по ссылкам в меню
+    const menuLinks = document.querySelectorAll('.modal-menu__nav-list a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', closeModalMenu);
+    });
+});
