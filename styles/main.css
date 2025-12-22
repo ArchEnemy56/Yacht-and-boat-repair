@@ -278,8 +278,6 @@ p {
 .right_menu {
     display: flex;
     gap: 12px;
-    top: 45px;
-    right: 49px;
     width: 215px;
     height: 30px;
     border-radius: 500px;
@@ -289,18 +287,30 @@ p {
 }
 
 .bid {
-    font-family: "Onest", sans-serif;
-    font-weight: 600;
-    font-size: 10px;
-    width: 177px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 177px;
     height: 28px;
     border-radius: 30px;
     background-color: var(--blue);
     border: none;
     outline: none;
     text-align: center;
-    color: var(--white);
     cursor: pointer;
+    align-items: center;
+}
+
+.bid a {
+    font-family: "Onest", sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.right_menu a {
+    display: flex;
 }
 
 .hero_title {
@@ -410,7 +420,8 @@ p {
 
 .hero_cards {
     display: flex;
-    width: 550px;
+    width: 100%;
+    max-width: 550px;
     height: 100%;
     z-index: 2;
     right: 46px;
@@ -444,6 +455,33 @@ p {
 
 .card_photo {
     display: flex;
+    overflow: hidden;
+}
+
+.client {
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.cl1 {
+    background-image: url(../images/face1.png);
+    background-size: cover;
+}
+
+.cl2 {
+    background-image: url(../images/face2.png);
+    background-size: cover;
+    z-index: 22;
+    margin-left: -22px;
+}
+
+.cl3 {
+    background-image: url(../images/face3.png);
+    background-size: cover;
+    z-index: 33;
+    margin-left: -22px;
 }
 
 .c3000 {
@@ -827,7 +865,7 @@ p {
 .line_3_but_wh {
     display: flex;
     margin-top: 10px;
-    width: 118px;
+    width: 130px;
     height: 48px;
     border-radius: 50px;
     justify-content: space-between;
@@ -2234,7 +2272,7 @@ footer {
     margin: 10px 0 10px 0;
     width: 100%;
     height: 838px;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .cont_head {
