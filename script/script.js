@@ -58,10 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
     prevBtn.addEventListener('click', scrollPrev);
 });
 
-// Button Up
-
-
-
 // карусель отзывы
 
 document.addEventListener('DOMContentLoaded', function() {

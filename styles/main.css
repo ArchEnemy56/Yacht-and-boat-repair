@@ -30,6 +30,7 @@
     --deep-blue: rgba(9, 116, 181, 1);
     --dark-blue: rgba(7, 29, 52, 1);
     --tr: .3s;
+    --smooth-tr: .5s;
 }
 
 html {
@@ -275,15 +276,18 @@ p {
     transition: var(--tr);
 }
 
+.nav_link:hover {
+    color: var(--blue);
+}
+
 .right_menu {
     display: flex;
-    gap: 12px;
     width: 215px;
     height: 30px;
     border-radius: 500px;
     background-color: var(--deep-blue);
     z-index: 2;
-    padding: 6px 12px;
+    padding: 6px 10px;
 }
 
 .bid {
@@ -309,8 +313,12 @@ p {
     text-decoration: none;
 }
 
-.right_menu a {
+.burger_btn {
     display: flex;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 
 .hero_title {
@@ -610,6 +618,15 @@ p {
     object-fit: cover;
     width: 100%;
     height: 515.61px;
+    transition: var(--smooth-tr);
+}
+
+:is(.service_item_1, .service_item_2, .service_item_3, .service_line_2_left, .service_line_2_right_top, .service_line_2_right_bottom):hover {
+    .arrow-icon {
+        transform: rotate(45deg);
+    }
+    transform: scale(1.05);
+    transition: var(--smooth-tr);
 }
 
 .service_item_1 {
@@ -675,6 +692,7 @@ p {
     width: 100%;
     max-width: 790px;
     height: 569px;
+    transition: var(--smooth-tr);
 }
 
 .service_line_2_right {
@@ -694,6 +712,7 @@ p {
     width: 100%;
     max-width: 790px;
     height: 274px;
+    transition: var(--smooth-tr);
 }
 
 .service_line_2_right_top {
@@ -708,6 +727,7 @@ p {
     width: 100%;
     max-width: 790px;
     height: 274px;
+    transition: var(--smooth-tr);
 }
 
 
@@ -2338,4 +2358,83 @@ footer {
 .requisites_mid_3 {
     display: flex;
     flex-direction: column;
+}
+
+/* modal menu*/
+
+.modal-menu {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Содержимое модального окна */
+.modal-content {
+    position: absolute;
+    top: -100%; /* Изначально скрыто вверху */
+    left: 0;
+    width: 100%;
+    max-width: 1000px;
+    background-color: aqua;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Анимация появления сверху */
+@keyframes slideDown {
+    from { top: -100%; }
+    to { top: 0; }
+}
+
+/* Кнопка закрытия */
+.close-btn {
+    font-size: 30px;
+    font-weight: bold;
+    color: #555;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Разделы меню */
+.menu-section {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-section h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-section li {
+    margin: 10px 0;
+}
+
+.menu-section a {
+    text-decoration: none;
+    color: #444;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+.menu-section a:hover {
+    color: #007bff;
 }
