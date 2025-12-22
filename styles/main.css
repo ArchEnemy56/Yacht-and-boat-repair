@@ -1106,20 +1106,21 @@ footer {
 .foot_blur {
     width: 100%;
     max-width: 600px;
-    height: 290px;
+    height: 260px;
     border-radius: 30px;
     backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 30px 20px;
+    background-color: var(--op-w);
 }
 
 .foot_info {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 399px;
+    max-width: 400px;
     gap: 12px;
     margin: 0 auto;
 }
@@ -1818,8 +1819,8 @@ footer {
 }
 
 .user-info h3 {
+    margin: 0  0 5px 0;
     font-size: 1.3rem;
-    margin-bottom: 5px;
     color: #1e293b;
 }
 
@@ -1990,6 +1991,7 @@ footer {
     max-width: 1523px;
     height: 347px;
     align-items: center;
+    margin: 0 auto;
 }
 
 .tech_blur {
@@ -2002,7 +2004,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 30px 20px;
-    margin-left: 120px;
+    margin-left: 70px;
 }
 
 .tech_info {

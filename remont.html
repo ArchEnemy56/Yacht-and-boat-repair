@@ -71,7 +71,8 @@
         </ul>
       </nav>
       <div class="right_menu">
-        <button  type="button" class="burger_btn"><img
+        <button id="burger_menuBtn"
+                type="button" class="burger_btn"><img
                 src="images/svg/burger-1.svg" alt="бургер" loading="lazy">
         </button>
         <button type="button" class="bid"><a
@@ -467,6 +468,58 @@
 </div>
 
   <script src="script/script.js"></script>
+
+<!-- Модальное меню -->
+<div id="modalMenu" class="modal-menu">
+  <div class="modal-menu__content">
+    <div class="modal-menu__header">
+      <div class="modal-menu__logo">ЯХТ-СЕРВИС «МАЯК»</div>
+      <button id="modalCloseBtn" class="modal-menu__close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-menu__body">
+      <nav class="modal-menu__nav">
+        <ul class="modal-menu__nav-list">
+          <li><a href="o-kompanii.html">О компании</a></li>
+          <li><a href="uslugi.html">Услуги</a></li>
+          <li><a href="remont.html">Наши работы</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Блог</a></li>
+          <li><a href="kontakty.html">Контакты</a></li>
+        </ul>
+        <button class="modal-menu__request-btn">Оставить заявку</button>
+      </nav>
+      <div class="modal-menu__info">
+        <div class="modal-menu__contacts">
+          <h3>Контакты</h3>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+79037997812">+7 (903) 799-78-12</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:ys-mayak@ya.ru">ys-mayak@ya.ru</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Московская область, г. Химки, ул. Кудрявцева, 10Б</span>
+          </div>
+        </div>
+        <div class="modal-menu__services">
+          <h3>Все услуги</h3>
+          <ul>
+            <li>Техническое обслуживание и ремонт</li>
+            <li>Ремонт корпуса яхты, экстерьерные работы</li>
+            <li>Интерьерные работы</li>
+            <li>Сезонные работы и дополнительное оборудование</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 
 </html>
