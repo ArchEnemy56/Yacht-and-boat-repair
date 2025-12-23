@@ -198,7 +198,6 @@ p {
     background-repeat: no-repeat;
     width: 100%;
     height: 855.93px;
-    margin-top: -5px;
     display: flex;
     flex-direction: column;
     gap: 45px;
@@ -2431,7 +2430,7 @@ footer {
     align-items: center;
     height: 140px;
     margin-inline: 45px;
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--op-w);
 
 }
 
@@ -2592,5 +2591,5 @@ footer {
     flex-direction: column;
     gap: 20px;
     height: 500px;
-    border-right: 1px solid var(--white);
+    border-right: 1px solid var(--op-w);
 }
