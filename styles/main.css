@@ -315,6 +315,11 @@ p {
     border: none;
     outline: none;
     background-color: transparent;
+    transition: var(--tr);
+}
+
+.burger_btn:hover {
+    transform: scale(1.25);
 }
 
 .hero_title {
@@ -1079,6 +1084,11 @@ p {
     line-height: 1.4;
 }
 
+.number,
+.email {
+    text-decoration: none;
+}
+
 .b_t {
     color: var(--deep-blue);
 }
@@ -1721,6 +1731,32 @@ footer {
     padding: 40px 0;
 }
 
+.reviews_yandex {
+    display: flex;
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviews_yandex img {
+    width: 190px;
+    height: 50px;
+}
+.yandex_text a {
+    color: var(--dark-blue);
+}
+
+.yandex_info {
+    width: 285px;
+    height: 71px;
+}
+
+.yandex_info p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
 .section-header {
     text-align: start;
     margin-bottom: 40px;
@@ -1764,7 +1800,7 @@ footer {
 .slider-container {
     overflow: hidden;
     position: relative;
-    margin: 0 auto 40px;
+    margin: 0 auto;
     padding: 10px;
 }
 
@@ -2358,150 +2394,80 @@ footer {
     flex-direction: column;
 }
 
-/* modal menu*/
-
-.modal-menu {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Содержимое модального окна */
-.modal-content {
-    position: absolute;
-    top: -100%; /* Изначально скрыто вверху */
-    left: 0;
-    width: 100%;
-    max-width: 1000px;
-    background-color: aqua;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    animation: slideDown 0.5s ease-out;
-}
-
-/* Анимация появления сверху */
-@keyframes slideDown {
-    from { top: -100%; }
-    to { top: 0; }
-}
-
-/* Кнопка закрытия */
-.close-btn {
-    font-size: 30px;
-    font-weight: bold;
-    color: #555;
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    cursor: pointer;
-}
-
-.close-btn:hover {
-    color: #000;
-}
-
-/* Разделы меню */
-.menu-section {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.menu-section h3 {
-    margin: 0 0 10px 0;
-    color: #333;
-}
-
-.menu-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu-section li {
-    margin: 10px 0;
-}
-
-.menu-section a {
-    text-decoration: none;
-    color: #444;
-    display: block;
-    padding: 8px 0;
-    transition: color 0.3s;
-}
-
-.menu-section a:hover {
-    color: #007bff;
-}
-
 /* Стили для модального меню */
 .modal-menu {
     display: none;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
+    max-width: 1600px;
     height: 100%;
-    background-color: rgba(7, 29, 52, 0.9);
     z-index: 1000;
     overflow-y: auto;
     opacity: 0;
     transition: opacity 0.3s ease;
+    margin: 0 auto;
 }
 
 .modal-menu.active {
     display: block;
     opacity: 1;
+    animation: slideDown 0.5s ease-out;
 }
 
 .modal-menu__content {
-    background-color: var(--white);
+    backdrop-filter: blur(80px);
+    border-radius: 30px;
     width: 100%;
-    min-height: 100vh;
-    padding: 30px 15px;
+    margin-top: 4vh;
+    min-height: 96vh;
     box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .modal-menu__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
-}
+    height: 140px;
+    margin-inline: 45px;
+    border-bottom: 1px solid var(--white);
 
-.modal-menu__logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--dark-blue);
 }
 
 .modal-menu__close-btn {
     background: none;
-    border: none;
+    border: 1px solid var(--white);
+    border-radius: 100%;
     font-size: 24px;
     cursor: pointer;
-    color: var(--dark-blue);
-    padding: 5px;
+    color: var(--white);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_buttons {
+    display: flex;
+    gap: 10px;
 }
 
 .modal-menu__nav-list {
+    display: flex;
+    justify-content: space-between;
     list-style: none;
     padding: 0;
-    margin: 0 0 40px 0;
-}
-
-.modal-menu__nav-list li {
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .modal-menu__nav-list a {
     text-decoration: none;
-    color: var(--dark-blue);
-    font-size: 18px;
-    font-weight: 500;
+    color: var(--white);
+    font-size: 13.9px;
+    font-weight: 400;
+    line-height: 16px;
     transition: color 0.3s ease;
 }
 
@@ -2510,20 +2476,21 @@ footer {
 }
 
 .modal-menu__request-btn {
-    background-color: var(--blue);
-    color: white;
-    border: none;
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
     border-radius: 50px;
-    padding: 15px 30px;
+    padding: 12px 45px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: var(--tr) ease;
 }
 
 .modal-menu__request-btn:hover {
     background-color: var(--deep-blue);
+    border: none;
+    transition: var(--tr) ease;
 }
 
 .modal-menu__info {
@@ -2531,29 +2498,41 @@ footer {
 }
 
 .modal-menu__info h3 {
-    color: var(--dark-blue);
+    color: var(--white);
     font-size: 20px;
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .contact-item {
     display: flex;
-    align-items: center;
+    align-items: start;
+    flex-direction: column;
     margin-bottom: 15px;
-    color: var(--dark-blue);
+    color: var(--white);
 }
 
 .contact-item i {
     margin-right: 10px;
-    color: var(--blue);
+    color: var(--white);
     width: 20px;
     text-align: center;
 }
 
-.contact-item a {
-    color: var(--dark-blue);
+.contact-item a,
+.contact-item span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--white);
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.contact-item p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .contact-item a:hover {
@@ -2561,50 +2540,57 @@ footer {
 }
 
 .modal-menu__services ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.modal-menu__services li {
+.modal-menu__services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-menu__services li a {
     margin-bottom: 12px;
     position: relative;
-    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--white);
+    text-decoration: none;
 }
 
-.modal-menu__services li:before {
-    content: "•";
-    color: var(--blue);
-    position: absolute;
-    left: 0;
+.modal-menu__body {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 45px;
+    margin-top: 40px;
 }
 
-/* Адаптивность */
-@media (min-width: 768px) {
-    .modal-menu__content {
-        max-width: 90%;
-        margin: 0 auto;
-        padding: 40px;
-    }
-    
-    .modal-menu__body {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .modal-menu__nav {
-        width: 40%;
-    }
-    
-    .modal-menu__info {
-        width: 55%;
-        margin-top: 0;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .modal-menu__contacts,
-    .modal-menu__services {
-        width: 48%;
-    }
+.modal-menu__nav {
+     width: 45%;
+ }
+
+.modal-menu__info {
+    width: 55%;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-menu__contacts,
+.modal-menu__services {
+    width: 46%;
+}
+
+.modal-menu__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 500px;
+    border-right: 1px solid var(--white);
 }
