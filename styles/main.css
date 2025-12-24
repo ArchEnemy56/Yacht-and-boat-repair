@@ -52,7 +52,7 @@ p {
 .container {
     max-width: 1600px;
     margin: 0 auto;
-    /*padding-inline: 15px;*/
+    padding-inline: 15px;
 }
 
 .title_h1 {
@@ -2418,8 +2418,8 @@ footer {
     backdrop-filter: blur(80px);
     border-radius: 30px;
     width: 100%;
-    margin-top: 3.5vh;
-    min-height: 96.5vh;
+    margin-top: 4vh;
+    min-height: 96vh;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 

@@ -171,8 +171,8 @@
     }
 
     .modal-menu__content {
-        margin-top: 4.5vh;
-        min-height: 95.5vh;
+        margin-top: 5.5vh;
+        min-height: 94.5vh;
     }
 
     .modal-menu__info {
@@ -186,6 +186,15 @@
 
     .modal-menu__services {
         width: 55%;
+    }
+
+    .modal-menu {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        left: 0;
+        right: 0;
+        padding: 0 15px;
     }
 }
 
