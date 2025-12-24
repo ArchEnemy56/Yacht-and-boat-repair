@@ -52,7 +52,7 @@ p {
 .container {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 0 15px;
+    /*padding-inline: 15px;*/
 }
 
 .title_h1 {
@@ -541,7 +541,6 @@ p {
 
 .white_cub {
     display: flex;
-    top: 825px;
     margin-top: -115px;
 }
 
@@ -690,7 +689,7 @@ p {
     overflow: hidden;
     border-radius: 30px;
     width: 100%;
-    max-width: 790px;
+    /*max-width: 790px;*/
     height: 569px;
     transition: var(--smooth-tr);
 }
@@ -704,6 +703,7 @@ p {
     background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 6.png);
     display: flex;
     background-repeat: no-repeat;
+    background-position: 0 100%;
     background-size: cover;
     flex-direction: column;
     justify-content: space-between;
@@ -766,10 +766,10 @@ p {
 
 .cater_banner {
     display: flex;
-    margin-left: 115px;
     justify-content: center;
-    margin-right: 105px;
-    height: 600px;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
     margin-bottom: 150px;
 }
 
@@ -780,8 +780,9 @@ p {
     display: flex;
     border-radius: 20px 0 0 20px;
     width: 100%;
-    max-width: 736px;
+    /*max-width: 736px;*/
     margin-right: -25px;
+    height: 600px;
 }
 
 .gear {
@@ -794,9 +795,10 @@ p {
     flex-direction: column;
     background-color: var(--deep-blue);
     width: 100%;
-    max-width: 600px;
+    /*max-width: 670px;*/
     border-radius: 20px;
-    padding: 25px 25px 45px 45px;
+    padding: 25px;
+    justify-content: space-between;
 }
 
 .cater_line_1 {
@@ -854,8 +856,6 @@ p {
 .line_3_info {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    max-height: 157px;
     gap: 25px;
     margin-top: 30px;
 }
@@ -884,9 +884,7 @@ p {
 
 .line_3_but_wh {
     display: flex;
-    margin-top: 10px;
     width: 130px;
-    height: 48px;
     border-radius: 50px;
     justify-content: space-between;
     align-items: center;
@@ -1078,6 +1076,7 @@ p {
 }
 
 .cont_info {
+    display: flex;
     font-size: 32px;
     font-weight: 500;
     line-height: 1.4;
@@ -1719,9 +1718,8 @@ footer {
 
 .reviews_bg {
     border-radius: 25px; 
-    height: 797px;
+    height: 730px;
     background-color: rgba(234, 244, 250, 1);
-    margin-bottom: 100px;
 }
 
 .reviews-section {
@@ -1758,7 +1756,7 @@ footer {
 
 .section-header {
     text-align: start;
-    margin-bottom: 40px;
+    margin-bottom: -35px;
 }
 
 .section-header h2 {
@@ -2143,16 +2141,6 @@ footer {
     visibility: visible;
 }
 
-@media (max-width: 768px) {
-    .btn-up {
-        right: 20px;
-        bottom: 20px;
-        width: 50px;
-        height: 50px;
-        background-size: 20px;
-    }
-}
-
 /* Стили для блока с услугами ТО */
 .tech_section {
     display: flex;
@@ -2395,7 +2383,7 @@ footer {
 
 /* Стили для модального меню */
 .modal-menu {
-    display: none;
+    visibility: hidden;
     position: fixed;
     top: 0;
     width: 100%;
@@ -2406,21 +2394,32 @@ footer {
     opacity: 0;
     transition: opacity 0.3s ease;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .modal-menu.active {
-    display: block;
     opacity: 1;
-    animation: slideDown 0.5s ease-out;
+    visibility: visible;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px); /* или другое начальное смещение */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .modal-menu__content {
     backdrop-filter: blur(80px);
     border-radius: 30px;
     width: 100%;
-    margin-top: 4vh;
-    min-height: 96vh;
-    box-sizing: border-box;
+    margin-top: 3.5vh;
+    min-height: 96.5vh;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
