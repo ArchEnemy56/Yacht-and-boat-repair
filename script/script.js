@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const clone = item.cloneNode(true);
         carousel.appendChild(clone);
     });
-    
+
     // Текущий индекс видимой первой карточки (в исходном наборе)
     let currentIndex = 0;
     const totalOriginalItems = items.length; // 10
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Функция прокрутки вперёд (вправо)
     function scrollNext() {
         currentIndex++;
-        
+
         // Если вышли за пределы оригинала — «перематываем» визуально
         if (currentIndex >= totalOriginalItems) {
             // Плавно прокручиваем до клонированной копии первой карточки
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Сбрасываем индекс, чтобы продолжить цикл
             currentIndex = 0;
         }
-        
+
         carousel.scrollBy({
             left: scrollAmount,
             behavior: 'smooth'
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Функция прокрутки назад (влево)
     function scrollPrev() {
         currentIndex--;
-        
+
         // Если ушли до отрицательного — «перематываем» в конец
         if (currentIndex < 0) {
             // Прокручиваем до последней оригинальной карточки
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Устанавливаем индекс на последнюю карточку
             currentIndex = totalOriginalItems - 1;
         }
-        
+
         carousel.scrollBy({
             left: -scrollAmount,
             behavior: 'smooth'
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     const dotsContainer = document.querySelector('.slider-dots');
-    
+
     // Параметры слайдера
     let currentSlide = 0;
     let cardsPerView = 3;
@@ -75,29 +75,29 @@ document.addEventListener('DOMContentLoaded', function() {
     let gap = 30;
     let step = 0;
     let maxSlides = 0;
-    
+
     // Создаем точки навигации
     function createDots() {
         dotsContainer.innerHTML = '';
         const dotsCount = Math.ceil(cards.length / cardsPerView);
-        
+
         for (let i = 0; i < dotsCount; i++) {
             const dot = document.createElement('div');
             dot.classList.add('dot');
             if (i === 0) dot.classList.add('active');
-            
+
             dot.addEventListener('click', () => {
                 goToSlide(i);
             });
-            
+
             dotsContainer.appendChild(dot);
         }
     }
-    
+
     // Рассчитываем количество карточек в зависимости от ширины экрана
     function calculateCardsPerView() {
         const screenWidth = window.innerWidth;
-        
+
         if (screenWidth <= 768) {
             cardsPerView = 1;
         } else if (screenWidth <= 1024) {
@@ -105,41 +105,41 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             cardsPerView = 3;
         }
-        
+
         maxSlides = Math.ceil(cards.length / cardsPerView) - 1;
         updateSlider();
         createDots();
     }
-    
+
     // Обновляем параметры слайдера
     function updateSlider() {
         if (cards.length > 0) {
             // Получаем актуальную ширину карточки
             cardWidth = cards[0].offsetWidth;
             step = (cardWidth + gap) * cardsPerView;
-            
+
             // Обновляем состояние кнопок
             updateButtons();
             updateDots();
         }
     }
-    
+
     // Переход к определенному слайду
     function goToSlide(slideIndex) {
         currentSlide = slideIndex;
         const translateX = -currentSlide * step;
         sliderTrack.style.transform = `translateX(${translateX}px)`;
-        
+
         updateButtons();
         updateDots();
     }
-    
+
     // Обновление состояния кнопок
     function updateButtons() {
         prevBtn.disabled = currentSlide === 0;
         nextBtn.disabled = currentSlide >= maxSlides;
     }
-    
+
     // Обновление активной точки
     function updateDots() {
         const dots = document.querySelectorAll('.dot');
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Обработчики событий для кнопок
     prevBtn.addEventListener('click', () => {
         if (currentSlide > 0) {
@@ -159,14 +159,14 @@ document.addEventListener('DOMContentLoaded', function() {
             goToSlide(currentSlide);
         }
     });
-    
+
     nextBtn.addEventListener('click', () => {
         if (currentSlide < maxSlides) {
             currentSlide++;
             goToSlide(currentSlide);
         }
     });
-    
+
     // Обработчик изменения размера окна
     let resizeTimeout;
     window.addEventListener('resize', () => {
@@ -175,12 +175,12 @@ document.addEventListener('DOMContentLoaded', function() {
             calculateCardsPerView();
         }, 200);
     });
-    
+
     // Инициализация слайдера после полной загрузки страницы
     window.addEventListener('load', () => {
         calculateCardsPerView();
     });
-    
+
     // Также инициализируем сразу на случай, если страница уже загружена
     if (document.readyState === 'complete') {
         calculateCardsPerView();
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Кнопка прокрутки вверх
 document.addEventListener('DOMContentLoaded', function() {
     const btnUp = document.getElementById('btnUp');
-    
+
     // Показываем/скрываем кнопку при прокрутке страницы
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btnUp.classList.remove('active');
         }
     });
-    
+
     // Плавная прокрутка вверх при клике на кнопку
     btnUp.addEventListener('click', (e) => {
         e.preventDefault();

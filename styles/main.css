@@ -1056,6 +1056,8 @@ p {
     background-position: center center;
     width: 586px;
     height: 566px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .contacts_left {
@@ -1717,7 +1719,7 @@ footer {
 /* reviews */
 
 .reviews_bg {
-    border-radius: 25px; 
+    border-radius: 25px;
     height: 730px;
     background-color: rgba(234, 244, 250, 1);
 }
@@ -2570,8 +2572,8 @@ footer {
 }
 
 .modal-menu__nav {
-     width: 45%;
- }
+    width: 45%;
+}
 
 .modal-menu__info {
     width: 55%;

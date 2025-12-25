@@ -44,6 +44,10 @@
         margin-bottom: 120px;
     }
 
+    .head_mid_add {
+        display: none;
+    }
+
     .nav_menu {
         margin-left: 25px;
         margin-right: 25px;
@@ -143,17 +147,28 @@
 
     .cater_banner {
         flex-direction: column;
-        gap: 20px;
     }
 
     .cater_right {
-        height: 600px;
+        height: 500px;
         width: auto;
+        margin-top: -30px;
     }
 
     .cater_left {
         justify-content: flex-end;
         border-radius: 20px;
+    }
+
+    .cater_line_2 p {
+        max-width: 540px;
+        br {
+            display: none;
+        }
+    }
+
+    .cater_title {
+        max-width: 475px;
     }
 
     .cub_title_swiper {
@@ -196,6 +211,14 @@
         right: 0;
         padding: 0 15px;
     }
+
+    .contacts {
+        gap: 0;
+    }
+
+    .footer {
+        height: 570px;
+    }
 }
 
 
@@ -209,20 +232,20 @@
     .section-title {
         font-size: 2rem;
     }
-    
+
     .slider-controls {
         margin-bottom: 20px;
     }
-    
+
     .slider-btn {
         width: 50px;
         height: 50px;
     }
-    
+
     .card-content {
         padding: 25px;
     }
-    
+
     .avatar {
         width: 50px;
         height: 50px;
@@ -250,6 +273,11 @@
         width: 50px;
         height: 50px;
         background-size: 20px;
+    }
+
+    .yacht {
+        max-width: 130px;
+        padding-inline: 12px;
     }
 }
 
