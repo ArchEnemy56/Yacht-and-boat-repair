@@ -94,19 +94,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Функция для оптимизации частых вызовов при ресайзе
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            const context = this;
+            const args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
+
     // Рассчитываем количество карточек в зависимости от ширины экрана
     function calculateCardsPerView() {
-        const screenWidth = window.innerWidth;
+        const container = document.querySelector('.slider-container');
+        const containerWidth = container ? container.offsetWidth : window.innerWidth;
 
-        if (screenWidth <= 768) {
-            cardsPerView = 1;
-        } else if (screenWidth <= 1024) {
-            cardsPerView = 2;
+        if (containerWidth <= 768) {
+            cardsPerView = 1;    // 1 карточка на экранах до 768px
+        } else if (containerWidth <= 1000) {
+            cardsPerView = 2;    // 2 карточки на экранах от 769px до 1000px
+        } else if (containerWidth <= 1200) {
+            cardsPerView = 3;    // 3 карточки на экранах от 1001px до 1200px
         } else {
-            cardsPerView = 3;
+            cardsPerView = 4;    // 4 карточки на экранах шире 1200px
         }
 
-        maxSlides = Math.ceil(cards.length / cardsPerView) - 1;
+        maxSlides = Math.max(0, Math.ceil(cards.length / cardsPerView) - 1);
         updateSlider();
         createDots();
     }
@@ -114,15 +128,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Обновляем параметры слайдера
     function updateSlider() {
         if (cards.length > 0) {
-            // Получаем актуальную ширину карточки
-            cardWidth = cards[0].offsetWidth;
-            step = (cardWidth + gap) * cardsPerView;
-
-            // Обновляем состояние кнопок
+            // Устанавливаем ширину карточки в зависимости от количества карточек в ряду
+            cardWidth = (sliderTrack.offsetWidth - (gap * (cardsPerView - 1))) / cardsPerView;
+            
+            // Устанавливаем фиксированную ширину для всех карточек
+            cards.forEach(card => {
+                card.style.minWidth = `${cardWidth}px`;
+                card.style.maxWidth = `${cardWidth}px`;
+            });
+            
+            step = cardWidth + gap;
+            sliderTrack.style.transform = `translateX(${-currentSlide * step}px)`;
+            
             updateButtons();
             updateDots();
         }
     }
+
+    // Добавляем обработчик события resize с debounce
+    window.addEventListener('resize', debounce(calculateCardsPerView, 250));
 
     // Переход к определенному слайду
     function goToSlide(slideIndex) {
@@ -167,26 +191,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Обработчик изменения размера окна
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            calculateCardsPerView();
-        }, 200);
-    });
+    // Инициализация слайдера
+    calculateCardsPerView();
 
-    // Инициализация слайдера после полной загрузки страницы
-    window.addEventListener('load', () => {
-        calculateCardsPerView();
-    });
-
-    // Также инициализируем сразу на случай, если страница уже загружена
-    if (document.readyState === 'complete') {
-        calculateCardsPerView();
-    } else {
-        calculateCardsPerView();
-    }
+    // Пересчитываем при полной загрузке страницы
+    window.addEventListener('load', calculateCardsPerView);
 });
 
 // Кнопка прокрутки вверх
