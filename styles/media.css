@@ -143,7 +143,8 @@
         height: 336px;
     }
 
-    .cater_banner {
+    .cater_banner,
+    .tech_cater_banner {
         flex-direction: column;
     }
 
@@ -168,6 +169,20 @@
 
     .cater_title {
         max-width: 475px;
+    }
+
+    .tech_cater_right {
+        justify-content: flex-end;
+        border-radius: 20px;
+        height: 550px;
+        background-position: 0 115%;
+    }
+
+    .tech_cater_left {
+        height: 500px;
+        width: auto;
+        margin-top: -30px;
+        margin-right: 0;
     }
 
     .cub_title_swiper {
@@ -258,9 +273,48 @@
 
     .card_our {
         margin: 0 5px;
+        flex: 0 0 calc(50% - 15px);
+        min-width: calc(50% - 15px);
+    }
+
+    .our_text {
+        width: 100%;
+        max-width: 335px;
+    }
+
+    .br_hid {
+        display: block;
+    }
+    .br_no_hid {
+        display: none;
+    }
+
+    .our,
+    .tech {
+        height: 370px;
+    }
+
+    .our {
+        background-position: 75% 0;
+    }
+
+    .about {
+        height: 370px;
+    }
+
+    .about_line_2_text h2 {
+        font-size: 48px;
+        line-height: 43px;
+    }
+
+    .cont_inf_text {
+        max-width: 270px;
+    }
+
+    .cont_us {
+        height: 370px;
     }
 }
-
 
 @media (max-width: 768px) {
     .carousel-item {
@@ -327,8 +381,6 @@
 
     .card_our {
         margin: 0 5px;
-        flex: 0 0 calc(50% - 15px);
-        min-width: calc(50% - 15px);
     }
 }
 

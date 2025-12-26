@@ -55,16 +55,8 @@ p {
     padding-inline: 15px;
 }
 
-.title_h1 {
-    font-size: 62.5px;
-    font-weight: 500;
-    line-height: 76.8px;
-    letter-spacing: -1.92px;
-}
-
 .title_h2 {
     font-size: 38.9px;
-    font-weight: 500;
     line-height: 44.8px;
     letter-spacing: -0.4px;
     margin: 0;
@@ -571,10 +563,8 @@ p {
 }
 
 .cub_title h2 {
-    margin: 0;
     width: 100%;
-    max-width: 855px;
-    margin-left: 110px;
+    max-width: 930px;
     margin-top: 26px;
     letter-spacing: 0.3px;
     text-align: center;
@@ -749,16 +739,13 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 520px;
+    width: 100%;
+    max-width: 537px;
     margin-bottom: 50px;
 }
 
 .cub_title_2 h2 {
     text-align: center;
-    font-size: 38.9px;
-    font-weight: 500;
-    line-height: 44.8px;
-    letter-spacing: 0.4px;
     margin-top: 27px;
 }
 
@@ -769,7 +756,7 @@ p {
     justify-content: center;
     width: 100%;
     max-width: 1400px;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 150px;
 }
 
@@ -780,7 +767,6 @@ p {
     display: flex;
     border-radius: 20px 0 0 20px;
     width: 100%;
-    /*max-width: 736px;*/
     margin-right: -25px;
     height: 600px;
 }
@@ -795,9 +781,8 @@ p {
     flex-direction: column;
     background-color: var(--deep-blue);
     width: 100%;
-    /*max-width: 670px;*/
     border-radius: 20px;
-    padding: 25px;
+    padding: 25px 25px 45px 45px;
     justify-content: space-between;
 }
 
@@ -900,7 +885,7 @@ p {
 
 .cub_title_swiper h2 {
     width: 100%;
-    max-width: 850px;
+    max-width: 902px;
     text-align: left;
 }
 
@@ -1068,11 +1053,9 @@ p {
     height: 566px;
 }
 
-.contacts_left h2,
-.cont_us_right h2 {
+.contacts_left h2 {
     margin: 0;
     font-size: 38px;
-    font-weight: 500;
     line-height: 1.4;
     text-align: start;
 }
@@ -1289,9 +1272,7 @@ footer {
 
 .about_line_22 {
     display: flex;
-    margin-left: 45px;
-    margin-right: 45px;
-    margin-bottom: 60px;
+    margin: 0 45px 60px 45px;
     justify-content: space-between;
 }
 
@@ -1330,7 +1311,7 @@ footer {
     gap: 34px;
 }
 
-.about_line_2_text h1 {
+.about_line_2_text h2 {
     margin: 0;
     font-size: 62.5px;
     font-weight: 500;
@@ -1453,12 +1434,9 @@ footer {
     width: 100%;
     max-width: 665px;
     font-size: 40px;
-    font-weight: 700;
     line-height: 47px;
-    margin: 0;
+    margin: 100px 0 22px 0;
     text-align: start;
-    margin-top: 100px;
-    margin-bottom: 22px;
 }
 
 .quality_text {
@@ -1549,7 +1527,6 @@ footer {
 .quality_blur h3 {
     margin: 0;
     font-size: 28px;
-    font-weight: 700;
     line-height: 33px;
     text-align: left;
 }
@@ -1663,8 +1640,8 @@ footer {
 }
 
 .why_line_h3 {
+    margin: 0;
     font-size: 31px;
-    font-weight: 700;
     line-height: 22px;
     letter-spacing: 0.2px;
     color: var(--white);
@@ -1713,6 +1690,14 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
+}
+
+.br_hid {
+    display: none;
+}
+
+.br_no_hid {
+    display: block;
 }
 
 /* reviews */
@@ -1807,7 +1792,6 @@ footer {
     gap: 30px;
     transition: transform 0.5s ease-in-out;
     padding: 10px 5px;
-    will-change: transform;
 }
 
 .card_our {
@@ -1920,22 +1904,22 @@ footer {
 .tech_cater_banner {
     display: flex;
     flex-direction: row-reverse;
-    margin-left: 115px;
+    width: 100%;
+    max-width: 1400px;
     justify-content: center;
-    margin-right: 105px;
-    height: 600px;
+    margin: 0 auto;
     margin-bottom: 150px;
 }
 
 .tech_cater_right {
-    background-image: url(../images/image\ 24.png);
+    background-image: url(../images/vint.webp);
     background-size: cover;
-    background-position: center center;
+    background-position: 100% 0;
     display: flex;
     justify-content: flex-end;
     border-radius: 0 20px 20px 0;
     width: 100%;
-    max-width: 736px;
+    height: 600px;
 }
 
 .tech_cater_left {
@@ -1943,7 +1927,6 @@ footer {
     flex-direction: column;
     background-color: var(--dark-blue);
     width: 100%;
-    max-width: 600px;
     border-radius: 20px;
     padding: 25px 25px 45px 45px;
     margin-right: -25px;
@@ -2254,7 +2237,7 @@ footer {
 
 .sys_info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .sys_right {
@@ -2265,7 +2248,7 @@ footer {
 .sys_right li {
     font-size: 20px;
     font-weight: 400;
-    line-height: 44.8px;
+    line-height: 40px;
     letter-spacing: -0.4px;
 }
 
@@ -2278,6 +2261,7 @@ footer {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    height: 391px;
 }
 
 .sys-2 {
@@ -2449,6 +2433,29 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Стили для слайдера */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 30px;
+    padding: 20px 0;
+    margin: 0;
+    list-style: none;
+}
+
+.card_our {
+    /*flex: 0 0 auto;*/
+    box-sizing: border-box;
 }
 
 .modal_buttons {
