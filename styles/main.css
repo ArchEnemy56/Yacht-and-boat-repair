@@ -2608,3 +2608,44 @@ footer {
     height: 500px;
     border-right: 1px solid var(--op-w);
 }
+
+/* new page blog */
+
+.blog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    justify-items: center;
+    margin: 140px 0 200px 0;
+}
+
+.blog_item {
+    display: flex;
+    width: 100%;
+    max-width: 382px;
+    height: 534px;
+}
+
+.b_i_1,
+.b_i_2,
+.b_i_3 {
+    width: 100%;
+    max-width: 382px;
+    height: 361px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+}
+
+.b_i_1 {
+    background-image: url("../images/b_i_1.webp");
+}
+
+.b_i_2 {
+    background-image: url("../images/b_i_2.webp");
+}
+
+.b_i_3 {
+    background-image: url("../images/b_i_3.webp");
+}
