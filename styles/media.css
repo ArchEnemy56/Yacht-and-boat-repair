@@ -2,6 +2,7 @@
 
     .why {
         height: 1236px;
+        margin-top: 100px;
     }
 
     .why_cards  {
@@ -34,7 +35,7 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .hero {
         height: 700px;
         gap: 25px;
@@ -173,7 +174,7 @@
         flex-direction: column;
     }
 
-    .ad_1000 {
+    .ad_1024 {
         font-size: 15px;
         font-weight: 400;
         opacity: 0.5;
@@ -215,6 +216,44 @@
 
     .slider-track {
         gap: 15px;
+    }
+
+    .description_info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .description_bottom_text {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    .quality {
+        margin-bottom: 100px;
+    }
+
+    .quality_left h2 {
+        margin-top: 30px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 38px;
+        letter-spacing: -0.4px;
+        color: var(--deep-blue);
+    }
+
+    .quality_text {
+        max-width: 455px;
+    }
+
+    .quality_right_1,
+    .quality_right_2,
+    .quality_right_3 {
+        height: 410px;
+    }
+
+    .quality_blur {
+        max-width: 343px;
     }
 }
 

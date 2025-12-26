@@ -1383,7 +1383,6 @@ footer {
 }
 
 .description_bottom_text {
-    width: 229px;
     height: 161px;
     border-radius: 20px;
     border: 1px solid rgba(227, 227, 227, 1);
@@ -2399,7 +2398,6 @@ footer {
     transition: opacity 0.3s ease;
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 15px;
 }
 
 .modal-menu.active {
@@ -2593,6 +2591,11 @@ footer {
     line-height: 1.4;
     color: var(--white);
     text-decoration: none;
+    transition: var(--tr);
+}
+
+.modal-menu__services li a:hover {
+    color: var(--blue);
 }
 
 .modal-menu__body {
