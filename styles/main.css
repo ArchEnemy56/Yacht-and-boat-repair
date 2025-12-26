@@ -1807,6 +1807,7 @@ footer {
     gap: 30px;
     transition: transform 0.5s ease-in-out;
     padding: 10px 5px;
+    will-change: transform;
 }
 
 .card_our {
@@ -2448,34 +2449,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Стили для слайдера */
-.slider-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-.slider-track {
-    display: flex;
-    transition: transform 0.3s ease;
-    gap: 30px;
-    padding: 20px 0;
-    margin: 0;
-    list-style: none;
-}
-
-.card_our {
-    flex: 0 0 auto;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background: #fff;
 }
 
 .modal_buttons {

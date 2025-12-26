@@ -255,6 +255,10 @@
     .quality_blur {
         max-width: 343px;
     }
+
+    .card_our {
+        margin: 0 5px;
+    }
 }
 
 
@@ -323,6 +327,8 @@
 
     .card_our {
         margin: 0 5px;
+        flex: 0 0 calc(50% - 15px);
+        min-width: calc(50% - 15px);
     }
 }
 
