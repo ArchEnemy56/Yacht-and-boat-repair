@@ -424,8 +424,6 @@ p {
     max-width: 550px;
     height: 100%;
     z-index: 2;
-    right: 46px;
-    top: 460px;
     gap: 14px;
 }
 

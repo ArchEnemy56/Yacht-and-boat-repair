@@ -46,6 +46,10 @@
         display: none;
     }
 
+    .hero_cards {
+        gap: 10px;
+    }
+
     .nav_menu {
         margin-left: 25px;
         margin-right: 25px;
@@ -314,9 +318,85 @@
     .cont_us {
         height: 370px;
     }
+
+    .c3000 {
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 768px) {
+
+    .hero {
+        margin-bottom: 100px;
+    }
+
+    .hero_cards {
+        gap: 5px;
+    }
+
+    .c3000 {
+        font-size: 20px;
+    }
+
+    .hc_1,
+    .hc_3 {
+        width: 98px;
+        height: 141px;
+    }
+
+    .hc_2 {
+        width: 145px;
+        height: 141px;
+    }
+
+    .hc_2_title {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: -1.6px;
+    }
+
+    .hc_2_text {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15.96px;
+    }
+
+    .hero_line2 {
+        margin-top: -20px;
+    }
+    .hero_line_3 {
+        padding-inline: 25px;
+        gap: 20px;
+        align-items: flex-end;
+        margin-top: 115px;
+    }
+
+    .hero_info {
+        margin-top: 0;
+        width: 300px;
+    }
+
+    .info_but_wh,
+    .info_but_blue {
+        width: 100%;
+        max-width: 175px;
+    }
+
+    .hero_title {
+        font-size: 32px;
+        line-height: 36px;
+        letter-spacing: -2.5px;
+        font-weight: 500;
+    }
+
+    .hero_text {
+        font-size: 12px;
+        letter-spacing: 0;
+        max-width: 305px;
+    }
+
+
     .carousel-item {
         width: 140px;
         height: 140px;
