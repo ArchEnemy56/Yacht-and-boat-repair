@@ -892,6 +892,7 @@ p {
 .carousel-container {
     max-width: 1500px;
     margin: 40px auto;
+    position: relative;
 }
 
 /* Контейнер для кнопок управления */
@@ -922,6 +923,7 @@ p {
 
 .carousel {
     display: flex;
+    transition: transform 0.3s ease;
     overflow-x: auto;
     scroll-behavior: smooth;
     gap: 16px;
@@ -948,7 +950,8 @@ p {
     align-items: flex-end;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: var(--tr), box-shadow 0.3s;
+    transition: var(--tr), box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .carousel-item-1 {

@@ -37,6 +37,17 @@
 
 @media (max-width: 1024px) {
 
+    .carousel-container {
+        max-width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .carousel-item {
+        width: calc(33.333% - 15px);
+        margin: 0 7.5px;
+    }
+
     .header_info {
         padding-left: 25px;
         padding-right: 25px;
@@ -407,8 +418,8 @@
 
 
     .carousel-item {
-        width: 140px;
-        height: 140px;
+        width: calc(50% - 10px);
+        margin: 0 5px;
         font-size: 20px;
     }
 
@@ -451,7 +462,7 @@
     }
 
     .btn-up {
-        right: 50px;
+        right: 40px;
         bottom: 20px;
         width: 40px;
         height: 40px;
@@ -627,9 +638,9 @@
 
 @media (max-width: 480px) {
     .carousel-item {
-        width: 100px;
-        height: 100px;
+        width: calc(100% - 10px);
         font-size: 16px;
+        margin: 0 5px;
     }
 
     .carousel-controls {
