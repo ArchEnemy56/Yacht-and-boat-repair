@@ -452,6 +452,8 @@
     .yacht {
         max-width: 130px;
         padding-inline: 12px;
+        font-size: 10px;
+        height: 30px;
     }
 
     .slider-track {
@@ -461,6 +463,67 @@
 
     .card_our {
         margin: 0 5px;
+    }
+
+
+    .right_menu {
+        width: auto;
+        height: auto;
+        padding: 0;
+        background-color: transparent;
+        gap: 10px;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+
+    .right_menu .burger_btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--deep-blue);
+        border: none;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .right_menu .burger_btn img {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Стили для кнопки "Оставить заявку" */
+    .right_menu .bid {
+        width: 155px;
+        padding: 0 15px;
+        height: 30px;
+        border: 1px solid var(--white);
+        border-radius: 20px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    /* Анимация при наведении на кнопку */
+    .right_menu .bid:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+        background-color: var(--deep-blue);
+        border: none;
+        transition: var(--tr) ease;
+    }
+    .right_menu .burger_btn img {
+        height: 44px;
+        width: 44px;
+    }
+
+    .right_menu .burger_btn {
+        background: transparent;
     }
 }
 
