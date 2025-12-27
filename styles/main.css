@@ -1,23 +1,23 @@
 @font-face {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto";
     src: url(fonts/Roboto_Condensed-Regular.ttf) format('truetype');
     font-weight: 400;
 }
 
 @font-face {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto";
     src: url(fonts/Roboto_Condensed-Medium.ttf) format('truetype');
     font-weight: 500;
 }
 
 @font-face {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto";
     src: url(fonts/Roboto_Condensed-Bold.ttf) format('truetype');
     font-weight: 700;
 }
 
 @font-face {
-    font-family: "Onest", sans-serif;
+    font-family: "Onest";
     src: url(fonts/Onest-SemiBold.ttf) format('truetype');
     font-weight: 600;
 }
@@ -182,7 +182,7 @@ p {
 /* Hero */
 
 .hero {
-    background-image: url(../images/vid-sverhu\ 1.png);
+    background-image: url(../images/vid-sverhu-1.png);
     background-position: center center;
     margin: 0 auto;
     border-radius: 30px;
@@ -619,15 +619,15 @@ p {
 }
 
 .service_item_1 {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 1.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-1.png);
 }
 
 .service_item_2 {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 2.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-2.png);
 }
 
 .service_item_3 {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 3.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-3.png);
 }
 
 .service_text {
@@ -670,7 +670,7 @@ p {
 }
 
 .service_line_2_left {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 4.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-4.png);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -690,7 +690,7 @@ p {
 }
 
 .service_line_2_right_bottom {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 6.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-6.png);
     display: flex;
     background-repeat: no-repeat;
     background-position: 0 100%;
@@ -706,7 +706,7 @@ p {
 }
 
 .service_line_2_right_top {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image\ 5.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-5.png);
     display: flex;
     background-repeat: no-repeat;
     background-size: cover;
@@ -761,7 +761,7 @@ p {
 }
 
 .cater_left {
-    background-image: url(../images/image\ 24.png);
+    background-image: url(../images/image-24.png);
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -1036,7 +1036,7 @@ p {
 }
 
 .contacts_right {
-    background-image: url(../images/image\ 25.png);
+    background-image: url(../images/image-25.png);
     background-size: cover;
     background-position: center center;
     width: 586px;
@@ -2198,7 +2198,7 @@ footer {
     max-width: 120px;
     height: 120px;
     overflow: hidden;
-    background-image: url("../images/image 4.png");
+    background-image: url("../images/image-4.png");
     background-size: cover;
     background-position: 0 50%;
 }
