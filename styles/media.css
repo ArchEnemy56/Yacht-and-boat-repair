@@ -36,6 +36,11 @@
 }
 
 @media (max-width: 1024px) {
+
+    .header_info {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
     .hero {
         height: 700px;
         gap: 25px;
@@ -322,6 +327,10 @@
     .c3000 {
         font-size: 30px;
     }
+
+    .service_line_2_right_top {
+        background-position: 50%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -442,10 +451,10 @@
     }
 
     .btn-up {
-        right: 20px;
+        right: 50px;
         bottom: 20px;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background-size: 20px;
     }
 
@@ -524,6 +533,95 @@
 
     .right_menu .burger_btn {
         background: transparent;
+    }
+
+    .cub_title h2 {
+        font-size: 26px;
+        max-width: 562px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: -0.4px;
+    }
+
+    .service_text h3,
+    .service_line_2_right_top h3,
+    .service_line_2_right_bottom h3{
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 26px;
+        letter-spacing: -0.36px;
+    }
+
+    .service_line_2_right_top {
+        background-position: 50%;
+    }
+
+    .services_container {
+        margin-bottom: 100px;
+    }
+
+    .cub_title_2 {
+        max-width: 397px;
+    }
+
+    .cub_title_2 h2,
+    .cub_title_swiper h2 {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    .cub_title_swiper h2 {
+        max-width: 595px;
+    }
+
+    .section-header h2 {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 44.8px;
+    }
+
+    .user-info h3 {
+        font-size: 20px;
+        line-height: 133.34%;
+    }
+
+    .contacts_left h2 {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 117%;
+    }
+
+    .contacts_left,
+    .contacts_right {
+        height: auto;
+    }
+
+    .cont_info a,
+    .cont_info span {
+        font-size: 24px;
+    }
+
+    .contacts {
+        height: 382px;
+    }
+
+    .foot_info h3 {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    .polit,
+    .foot,
+    .foot_ps {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+    }
+
+    .footer {
+        background-position: 75% 0;
     }
 }
 
