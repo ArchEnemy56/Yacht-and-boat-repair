@@ -893,6 +893,11 @@ p {
     max-width: 1500px;
     margin: 40px auto;
     position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 /* Контейнер для кнопок управления */
@@ -932,6 +937,11 @@ p {
 }
 
 /* Скрываем скроллбар */
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
 .carousel::-webkit-scrollbar {
     display: none;
 }
