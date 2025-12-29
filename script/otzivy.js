@@ -14,6 +14,9 @@ function initCardSlider() {
     const gap = 30;
     let currentPosition = 0;
     let cardsToShow = window.innerWidth <= 1024 ? 2 : 3;
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
 
     // Функция для обновления видимой области
     function updateSlider() {
@@ -28,6 +31,47 @@ function initCardSlider() {
         }
 
         slider.style.transform = `translateX(${currentPosition}px)`;
+    }
+
+    // Функция для обработки начала касания/нажатия
+    function startDrag(e) {
+        isDragging = true;
+        startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+        currentX = currentPosition;
+        slider.style.transition = 'none';
+        e.preventDefault();
+    }
+
+    // Функция для обработки движения пальца/мыши
+    function drag(e) {
+        if (!isDragging) return;
+        const x = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const dragDistance = x - startX;
+        currentPosition = currentX + dragDistance;
+        updateSlider();
+    }
+
+    // Функция для завершения перетаскивания
+    function endDrag(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        slider.style.transition = 'transform 0.3s ease-in-out';
+
+        // Определяем направление свайпа
+        const x = e.type === 'mouseup' ? e.clientX : e.changedTouches[0].clientX;
+        const dragDistance = x - startX;
+
+        // Если свайп был достаточно большим, переключаем слайд
+        if (Math.abs(dragDistance) > cardWidth / 4) {
+            if (dragDistance > 0) {
+                slidePrev();
+            } else {
+                slideNext();
+            }
+        } else {
+            // Иначе возвращаем к предыдущей позиции
+            updateSlider();
+        }
     }
 
     // Обработчик кнопки "Вперед"
@@ -58,7 +102,19 @@ function initCardSlider() {
         updateSlider();
     }
 
-    // Вешаем обработчики событий
+    // Вешаем обработчики событий для мыши
+    slider.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', endDrag);
+    document.addEventListener('mouseleave', endDrag);
+
+    // Вешаем обработчики событий для сенсорных устройств
+    slider.addEventListener('touchstart', startDrag, { passive: false });
+    slider.addEventListener('touchmove', drag, { passive: false });
+    slider.addEventListener('touchend', endDrag);
+    slider.addEventListener('touchcancel', endDrag);
+
+    // Кнопки навигации
     if (nextBtn) nextBtn.addEventListener('click', slideNext);
     if (prevBtn) prevBtn.addEventListener('click', slidePrev);
 
