@@ -2677,3 +2677,8 @@ footer {
     width: 100%;
     max-width: 321px;
 }
+
+.header_2,
+.services_2 {
+    display: none;
+}

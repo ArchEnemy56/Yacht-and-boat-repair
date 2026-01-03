@@ -145,3 +145,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+
+
+//modalCloseBtn-2
+
+document.addEventListener('DOMContentLoaded', function() {
+    const newBtn = document.getElementById('modalCloseBtn-2');
+    const modalMenu = document.getElementById('modalMenu');
+
+    if (newBtn && modalMenu) {
+        newBtn.addEventListener('click', function() {
+            // Используем ту же функцию, что и для оригинальной кнопки
+            modalMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+});
