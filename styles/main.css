@@ -1112,7 +1112,7 @@ footer {
     max-width: 600px;
     height: 260px;
     border-radius: 30px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -1873,27 +1873,6 @@ footer {
     display: flex;
     gap: 3px;
     margin-bottom: 15px;
-}
-
-.slider-dots {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #cbd5e1;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    background-color: #3b82f6;
-    transform: scale(1.2);
 }
 
 /* tech */

@@ -7,12 +7,14 @@ function initCardSlider() {
     const cards = sliderContainer.querySelectorAll('.card_our');
     const prevBtn = document.querySelector('.slider-btn.prev-btn');
     const nextBtn = document.querySelector('.slider-btn.next-btn');
+    const dotsContainer = sliderContainer.querySelector('.slider-dots');
 
     if (!slider || cards.length === 0) return;
 
     let cardWidth = cards[0].offsetWidth;
     const gap = 30;
     let currentPosition = 0;
+    let currentSlide = 0;
     let cardsToShow = getCardsToShow();
     let startX = 0;
     let currentX = 0;
@@ -38,6 +40,7 @@ function initCardSlider() {
         }
 
         slider.style.transform = `translateX(${currentPosition}px)`;
+        updateDots();
     }
 
     // Функция для обработки начала касания/нажатия
@@ -137,6 +140,47 @@ function initCardSlider() {
     if (nextBtn) nextBtn.addEventListener('click', slideNext);
     if (prevBtn) prevBtn.addEventListener('click', slidePrev);
 
+    // Функция для создания точек навигации
+    function createDots() {
+        if (!dotsContainer) return;
+        
+        dotsContainer.innerHTML = '';
+        const dotCount = Math.ceil(cards.length / cardsToShow);
+        
+        for (let i = 0; i < dotCount; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            if (i === currentSlide) {
+                dot.classList.add('active');
+            }
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    // Функция для обновления активной точки
+    function updateDots() {
+        if (!dotsContainer) return;
+        const dots = dotsContainer.querySelectorAll('.slider-dot');
+        if (!dots.length) return;
+        
+        const newSlide = Math.abs(Math.round(currentPosition / (cardWidth + gap)));
+        if (newSlide !== currentSlide) {
+            currentSlide = newSlide;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+    }
+    
+    // Функция для перехода к определенному слайду
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        currentPosition = -slideIndex * (cardWidth + gap);
+        slider.style.transition = 'transform 0.5s ease-in-out';
+        updateSlider();
+    }
+
     // Обработчик изменения размера окна
     let resizeTimer;
     window.addEventListener('resize', () => {
@@ -144,17 +188,17 @@ function initCardSlider() {
         resizeTimer = setTimeout(() => {
             const newCardWidth = cards[0].offsetWidth;
             if (cardWidth > 0) {
-                // Сохраняем индекс текущей карточки
                 const currentIndex = Math.round(Math.abs(currentPosition) / (cardWidth + gap));
-                // Пересчитываем позицию с новыми размерами
                 currentPosition = -currentIndex * (newCardWidth + gap);
             }
             cardWidth = newCardWidth;
+            createDots();
             updateSlider();
         }, 250);
     });
 
     // Инициализация слайдера
+    createDots();
     updateSlider();
 }
 
