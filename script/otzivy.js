@@ -13,15 +13,22 @@ function initCardSlider() {
     let cardWidth = cards[0].offsetWidth;
     const gap = 30;
     let currentPosition = 0;
-    let cardsToShow = window.innerWidth <= 1024 ? 2 : 3;
+    let cardsToShow = getCardsToShow();
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
 
+    // Функция для определения количества отображаемых карточек
+    function getCardsToShow() {
+        if (window.innerWidth <= 480) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
     // Функция для обновления видимой области
     function updateSlider() {
-        cardsToShow = window.innerWidth <= 1024 ? 2 : 3;
-        const maxPosition = (cards.length - cardsToShow) * (cardWidth + gap);
+        cardsToShow = getCardsToShow();
+        const maxPosition = Math.max(0, (cards.length - cardsToShow) * (cardWidth + gap));
 
         // Корректируем позицию, если она выходит за пределы
         if (currentPosition < -maxPosition) {
@@ -77,11 +84,17 @@ function initCardSlider() {
     // Обработчик кнопки "Вперед"
     function slideNext() {
         cardWidth = cards[0].offsetWidth;
-        const maxPosition = (cards.length - cardsToShow) * (cardWidth + gap);
+        const maxPosition = Math.max(0, (cards.length - cardsToShow) * (cardWidth + gap));
         currentPosition -= (cardWidth + gap);
 
         if (currentPosition < -maxPosition) {
-            currentPosition = 0;
+            if (window.innerWidth <= 480) {
+                // Для мобильных - зацикливаем на начало
+                currentPosition = 0;
+            } else {
+                // Для десктопа - останавливаемся на последней карточке
+                currentPosition = -maxPosition;
+            }
         }
 
         slider.style.transition = 'transform 0.5s ease-in-out';
@@ -91,11 +104,17 @@ function initCardSlider() {
     // Обработчик кнопки "Назад"
     function slidePrev() {
         cardWidth = cards[0].offsetWidth;
-        const maxPosition = (cards.length - cardsToShow) * (cardWidth + gap);
+        const maxPosition = Math.max(0, (cards.length - cardsToShow) * (cardWidth + gap));
         currentPosition += (cardWidth + gap);
 
         if (currentPosition > 0) {
-            currentPosition = -maxPosition;
+            if (window.innerWidth <= 480) {
+                // Для мобильных - переходим к последней карточке
+                currentPosition = -maxPosition;
+            } else {
+                // Для десктопа - останавливаемся на первой карточке
+                currentPosition = 0;
+            }
         }
 
         slider.style.transition = 'transform 0.5s ease-in-out';
@@ -125,7 +144,10 @@ function initCardSlider() {
         resizeTimer = setTimeout(() => {
             const newCardWidth = cards[0].offsetWidth;
             if (cardWidth > 0) {
-                currentPosition = currentPosition * (newCardWidth / cardWidth);
+                // Сохраняем индекс текущей карточки
+                const currentIndex = Math.round(Math.abs(currentPosition) / (cardWidth + gap));
+                // Пересчитываем позицию с новыми размерами
+                currentPosition = -currentIndex * (newCardWidth + gap);
             }
             cardWidth = newCardWidth;
             updateSlider();

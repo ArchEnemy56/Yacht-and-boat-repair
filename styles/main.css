@@ -120,8 +120,7 @@ p {
     padding-right: 47px;
     align-items: center;
     justify-content: space-between;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin: 15px 0;
 }
 
 .head_add {
@@ -1091,7 +1090,7 @@ p {
 /* footer */
 
 footer {
-    background-image: url(../images/footer.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/footer.png);
     border-radius: 25px;
     background-size: cover;
     background-position: 0 100%;
@@ -2633,6 +2632,7 @@ footer {
 
 .blog_item {
     display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 382px;
     height: 534px;
@@ -2660,4 +2660,41 @@ footer {
 
 .b_i_3 {
     background-image: url("../images/b_i_3.webp");
+}
+
+.b_i_top {
+    display: flex;
+    gap: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 32px;
+}
+
+.b_i_mid {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.36;
+    letter-spacing: 0;
+}
+
+.b_i_bot {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+    margin-top: 12px;
+}
+
+.b_i_mid h4 {
+    margin: 0;
+}
+
+.b_i_mid,
+.b_i_bot  {
+    width: 100%;
+    max-width: 321px;
 }

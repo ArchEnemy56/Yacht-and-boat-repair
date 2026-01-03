@@ -349,6 +349,33 @@
     .service_line_2_right_top {
         background-position: 50%;
     }
+
+    .blog {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 65px 100px;
+        margin: 95px 0 140px 0;
+    }
+
+    .blog_1,
+    .blog_2 {
+        grid-row: 1 / 2;
+    }
+
+    .blog_3 {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    .blog_inf_text {
+        max-width: 349px;
+    }
+
+    .about_line_22 {
+        margin: 0 25px 40px 25px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -642,11 +669,25 @@
         background-position: 75% 0;
     }
 
-
     .carousel-container {
-        padding-bottom: 20px; /* Добавляем отступ снизу для лучшего UX */
+        padding-bottom: 20px;
     }
 
+    .blog {
+        margin: 75px 0 100px 0;
+        gap: 65px 35px;
+    }
+
+    .blog_item {
+        max-width: 321px;
+    }
+
+.b_i_1,
+    .b_i_2,
+    .b_i_3 {
+        max-width: 321px;
+        height: 314px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -666,10 +707,6 @@
 
     .reviews-section {
         padding: 20px 0;
-    }
-
-    .slider-controls {
-        gap: 15px;
     }
 
     .head_search {
@@ -766,6 +803,7 @@
 
     .footer {
         height: auto;
+        background-position: 20% 0;
     }
 
     .foot_index {
@@ -780,8 +818,58 @@
     .foot_blur {
         height: 436px;
         justify-content: space-between;
+        margin-inline: 10px;
     }
 
 
+    .card_our {
+        margin: 0 5px;
+        flex: 0 0 calc(100% - 10px);
+        min-width: calc(100% - 10px);
+    }
 
+    .slider-track {
+        gap: 0;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        padding: 0 5px;
+    }
+
+    .slider-container {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .slider-controls {
+        justify-content: center;
+    }
+
+    .section-header {
+        margin: 0;
+    }
+
+
+.about_line_22 {
+        flex-direction: column;
+        gap: 20px;
+        margin: 0 10px 25px 10px;
+    }
+
+    .about_line_2_text {
+        gap: 20px;
+    }
+
+    .cont_us {
+        height: 385px;
+    }
+
+    .blog_inf_text {
+        max-width: 356px;
+    }
+
+    .blog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
