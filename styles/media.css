@@ -263,7 +263,7 @@
 
     .contacts {
         gap: 0;
-        margin-bottom: 100px;
+        margin: 100px 0;
     }
 
     .footer {
@@ -352,12 +352,40 @@
         line-height: 43px;
     }
 
-    .cont_inf_text {
-        max-width: 270px;
+    .our_text {
+        width: 270px;
     }
 
     .cont_us {
         height: 370px;
+    }
+
+    .cont_us_text {
+        flex-direction: column;
+    }
+
+    .cont_us_left {
+        border-right: none;
+    }
+
+    .contacts_left h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .cont_us_right {
+        margin-left: 0;
+    }
+
+    .cont_head h2 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .mid_text {
+        text-transform: uppercase;
+        width: 100%;
+        max-width: 500px;
     }
 
     .c3000 {
@@ -593,7 +621,7 @@
 
     .yacht {
         padding: 12px;
-        max-width: none;
+        max-width: 130px;
         height: auto;
     }
 
@@ -735,6 +763,11 @@
 
     .contacts {
         height: 382px;
+    }
+
+    .cont_us_text {
+        height: auto !important;
+        padding: 15px;
     }
 
     .foot_info h3 {
@@ -1402,7 +1435,7 @@
     }
 
     .our_text {
-        width: 384px;
+        width: 310px;
     }
 
     .tech_cater_right.tech_cater_right {
@@ -1530,4 +1563,25 @@
          line-height: 1.4;
          opacity: 0.7;
      }
+
+     .mid_text {
+         font-size: 15px;
+         max-width: 440px;
+     }
+
+    .cont_us_right,
+    .requisites,
+    .requisites_mid {
+        height: auto;
+        gap: 20px;
+    }
+
+    .requisites_mid {
+        flex-direction: column;
+    }
+    .requisites_mid_1,
+    .requisites_mid_2,
+    .requisites_mid_3 {
+        gap: 10px;
+    }
 }
