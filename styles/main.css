@@ -792,10 +792,13 @@ p {
     margin-bottom: 8px;
 }
 
-.cater_line_1_img img {
-    border-radius: 12px;
+.remont_cater_line_1_img {
+    background-image: url("../images/image-TO.png");
     width: 120px;
     height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-position: 75%;
 }
 
 .cater_title {
@@ -1987,7 +1990,10 @@ footer {
 .consult_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-image: url(../images/consult.png);
+    background-image: url(../images/consult.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 20px;
     width: 100%;
     max-width: 1523px;
@@ -2001,6 +2007,7 @@ footer {
     max-width: 400px;
     border-radius: 20px;
     backdrop-filter: blur(5px);
+    background-color: var(--op-w);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2066,6 +2073,8 @@ footer {
 .tech_item {
     width: 100%;
     max-width: 350px;
+    padding-inline: 12px;
+    justify-content: flex-start;
 }
 
 .t_i_t {
