@@ -7,6 +7,10 @@
         min-height: 95vh;
         margin-inline: auto;
     }
+
+    .err_404 {
+        height: 148px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -47,6 +51,10 @@
 
     .slider-track {
         gap: 20px;
+    }
+
+    .err_404 {
+        height: 148px;
     }
 }
 
@@ -512,6 +520,12 @@
     .modern_text {
         margin-bottom: 0;
     }
+
+    .err_404 {
+        height: 148px;
+    }
+
+    height: 515px;
 }
 
 @media (max-width: 768px) {
@@ -1190,6 +1204,10 @@
         display: block;
         margin: 15px 0;
     }
+
+    .err_404 {
+        height: 148px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1714,5 +1732,16 @@
 
     .modern_info_lines {
         gap: 50px;
+    }
+
+    .err_404 {
+        height: 148px;
+    }
+
+    .err_404 .nav_menu {
+        margin: 0 25px;
+    }
+    .err_title p {
+        font-size: 14px;
     }
 }

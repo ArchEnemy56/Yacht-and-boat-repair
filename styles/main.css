@@ -2908,3 +2908,42 @@ footer {
     justify-content: center;
     background-position: 0 66%;
 }
+
+.err_cont {
+    background: rgba(233, 252, 255, 1);
+}
+
+.err_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 715px;
+    justify-content: space-evenly;
+}
+
+.err_title p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.err_button {
+    display: flex;
+    width: 100%;
+    max-width: 195px;
+    height: auto;
+    border-radius: 50px;
+    background-color: var(--blue);
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.err_button a{
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    text-decoration: none;
+}
