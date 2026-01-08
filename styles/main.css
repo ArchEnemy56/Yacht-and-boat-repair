@@ -562,11 +562,6 @@ p {
     margin-bottom: 52px;
 }
 
-.cub_title p,
-.cub_title_2 p {
-    margin-left: 18px;
-}
-
 .cub_title h2 {
     width: 100%;
     max-width: 930px;
@@ -809,6 +804,22 @@ p {
     border-radius: 12px;
     overflow: hidden;
     background-position: 75%;
+}
+
+.cater_line_1_img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.interier_line_1_img {
+    background-image: url("../images/image-50.webp");
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-position: 40%;
 }
 
 .cater_title {
@@ -1704,6 +1715,10 @@ footer {
     gap: 23px;
 }
 
+.interier_line_2 {
+    justify-content: flex-end;
+}
+
 .our_serv {
     display: flex;
     justify-content: center;
@@ -1935,12 +1950,6 @@ footer {
     margin-right: 20px;
 }
 
-.tech_cater_line_2 {
-    height: 100%;
-    max-height: 135px;
-    border-bottom: 1px solid var(--op-w);
-}{}
-
 .tech_cater_line_2 p{
     width: 100%;
     max-width: 456px;
@@ -2010,6 +2019,10 @@ footer {
     height: 347px;
     align-items: center;
     margin: 0 auto;
+}
+
+.consult_interier {
+    margin: 120px auto;
 }
 
 .tech_blur {
@@ -2700,6 +2713,8 @@ footer {
     display: none;
 }
 
+/* карты*/
+
 .maps_ya {
     width: 100%;
     margin: 50px 0;
@@ -2713,4 +2728,177 @@ footer {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* new page */
+
+/* interier */
+
+.interier_tech {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-11.webp);
+    margin: 0 0 100px 0;
+    border-radius: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 460px;
+    background-position: 0 15%;
+}
+
+.interier_cater_right {
+    background-image: url(../images/image-49.webp);
+    background-size: cover;
+    background-position: 50% 0;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 0 20px 20px 0;
+    width: 100%;
+    height: 600px;
+}
+
+.tech_cater_line_2 {
+    height: 100%;
+    max-height: 135px;
+    border-bottom: 1px solid var(--op-w);
+}
+
+.interier_title {
+    margin-bottom: 32px;
+}
+
+.modern {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.modern_img {
+    background-image: url("../images/modern.webp");
+    background-position: 50% 21%;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 557px;
+    height: 453px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.modern_items li {
+    font-size: 20px;
+    line-height: 44.8px;
+    letter-spacing: -0.4px;
+    text-align: left;
+    width: 100%;
+    max-width: 627px;
+}
+
+.modern_items {
+    display: flex;
+    flex-direction: column;
+    height: 453px;
+    justify-content: space-between;
+}
+
+.modern_info {
+    width: 100%;
+    max-width: 1215px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.modern_info_lines {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.modern_line {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.modern_title {
+    align-items: normal;
+}
+
+.modern_title h2 {
+    text-align: left;
+    max-width: 1025px;
+}
+
+.modern_text p {
+    font-size: 20px;
+    line-height: 44.8px;
+    letter-spacing: -0.4px;
+    width: 100%;
+    max-width: 1128px;
+}
+
+.modern_text {
+    margin-bottom: 80px;
+}
+
+.ml_text ul {
+    padding-inline-start: 20px;
+}
+
+.ml_text ul li {
+    font-size: 15px;
+    line-height: 35px;
+    letter-spacing: -0.4px;
+}
+
+.ml_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ml_1_img {
+    background-image: url("../images/kambuz.webp");
+    border-radius: 20px;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    height: 283px;
+}
+
+.ml_2_img {
+    background-image: url("../images/textil.webp");
+    border-radius: 20px;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    height: 223px;
+}
+
+.ml_3_img {
+    background-image: url("../images/santech.webp");
+    border-radius: 20px;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    height: 329px;
+}
+
+.ml_4_img {
+    background-image: url("../images/decor.webp");
+    border-radius: 20px;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    height: 353px;
+}
+
+.text-768 {
+    display: none;
 }

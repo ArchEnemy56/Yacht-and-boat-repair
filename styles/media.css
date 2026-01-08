@@ -493,6 +493,25 @@
         font-weight: 500;
         line-height: 34.56px;
     }
+
+    .modern_items li {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .modern_img {
+        width: 100%;
+        max-width: 468px;
+        height: 298px;
+    }
+
+    .modern_items {
+        height: 298px;
+    }
+
+    .modern_text {
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -872,7 +891,7 @@
     }
 
     .about_line_2_text h2 {
-        font-size: 40px;
+        font-size: 39px;
     }
 
     .line_2_text_right {
@@ -1104,6 +1123,73 @@
         height: 400px;
     }
 
+    .about_interier {
+        justify-content: space-between;
+    }
+
+    .modern {
+        flex-direction: column;
+    }
+
+    .modern_img {
+        max-width: none;
+        background-image: url("../images/modern-2.png");
+        background-position: center center;
+    }
+
+    .modern_items {
+        height: 236px;
+        padding-inline-start: 20px;
+        margin-top: 20px;
+    }
+
+    .modern_title h2 {
+        max-width: 611px;
+    }
+
+    .modern_title {
+        gap: 15px
+    }
+
+    .modern_text {
+        display: flex;
+        flex-direction: column;
+        gap: 15px
+    }
+
+    .modern_text p {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .modern_info_lines {
+        margin-top: 20px;
+    }
+
+    .ml_text {
+        justify-content: normal;
+    }
+
+.ml_text h2 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 44.8px;
+        letter-spacing: -0.4px;
+    }
+
+    .ml_text ul li {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .text-1024 {
+        display: none;
+    }
+
+    .text-768 {
+        display: block;
+        margin: 15px 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1190,7 +1276,8 @@
         font-size: 20px;
         font-weight: 500;
         line-height: 22px;
-        padding-left: 20px;
+        padding-left: 0;
+        width: 360px;
     }
 
     .cater_banner {
@@ -1448,13 +1535,8 @@
         width: 310px;
     }
 
-    .tech_cater_right.tech_cater_right {
+    .tech_cater_right {
         background-position: 70% 0;
-    }
-
-    .cater_title h2 {
-        padding-left: 0;
-        width: 360px;
     }
 
     .remont_grid {
@@ -1601,5 +1683,36 @@
 
     .maps_ya {
         padding: 0 10px;
+    }
+
+    .interier_tech {
+        height: 435px;
+        margin: 0 0 15px 0;
+    }
+
+    .interier_line_2 p {
+        width: 325px;
+    }
+
+    .interier_cater_right {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .interier_line_1_img {
+        display: none;
+    }
+
+    .cub_title h2 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .modern_line {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .modern_info_lines {
+        gap: 50px;
     }
 }
