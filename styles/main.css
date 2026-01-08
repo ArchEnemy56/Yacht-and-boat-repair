@@ -2902,3 +2902,9 @@ footer {
 .text-768 {
     display: none;
 }
+
+.err_404 {
+    height: 148px;
+    justify-content: center;
+    background-position: 0 66%;
+}
