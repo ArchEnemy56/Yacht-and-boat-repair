@@ -1100,6 +1100,10 @@
         padding-inline: 15px;
     }
 
+    #map {
+        height: 400px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1589,5 +1593,13 @@
     .requisites_mid_2,
     .requisites_mid_3 {
         gap: 10px;
+    }
+
+    #map {
+        height: 300px;
+    }
+
+    .maps_ya {
+        padding: 0 10px;
     }
 }
