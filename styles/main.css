@@ -545,6 +545,10 @@ p {
     height: 150px;
 }
 
+.right_cub {
+    margin-left: -1px;
+}
+
 .cub_container {
     display: flex;
     justify-content: center;

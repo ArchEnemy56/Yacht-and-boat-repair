@@ -3,8 +3,8 @@
         width: calc(100% - 30px);
         box-sizing: border-box;
         padding: 0 15px;
-        margin-top: 4.5vh;
-        min-height: 95.5vh;
+        margin-top: 5vh;
+        min-height: 95vh;
         margin-inline: auto;
     }
 }
@@ -362,6 +362,8 @@
 
     .cont_us_text {
         flex-direction: column;
+        padding: 15px;
+        align-items: normal
     }
 
     .cont_us_left {
@@ -1092,6 +1094,11 @@
 
     .tech_info p {
         text-align: center;
+    }
+
+    .reviews_yandex {
+        flex-direction: column;
+        padding-inline: 15px;
     }
 
 }

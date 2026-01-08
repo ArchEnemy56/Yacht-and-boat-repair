@@ -57,8 +57,16 @@ function initCardSlider() {
         if (!isDragging) return;
         const x = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
         const dragDistance = x - startX;
-        currentPosition = currentX + dragDistance;
-        updateSlider();
+        
+        // Ограничиваем смещение, чтобы не уходить за границы
+        const maxPosition = Math.max(0, (cards.length - cardsToShow) * (cardWidth + gap));
+        const newPosition = currentX + dragDistance;
+        
+        // Разрешаем смещение только в пределах допустимых границ
+        if (newPosition <= 0 && newPosition >= -maxPosition) {
+            currentPosition = newPosition;
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        }
     }
 
     // Функция для завершения перетаскивания
@@ -67,21 +75,27 @@ function initCardSlider() {
         isDragging = false;
         slider.style.transition = 'transform 0.3s ease-in-out';
 
-        // Определяем направление свайпа
         const x = e.type === 'mouseup' ? e.clientX : e.changedTouches[0].clientX;
         const dragDistance = x - startX;
 
+        // Определяем, насколько сильно нужно сдвинуть слайдер
+        const cardWidth = cards[0].offsetWidth;
+        const threshold = cardWidth / 4;
+        const direction = Math.sign(dragDistance);
+        
         // Если свайп был достаточно большим, переключаем слайд
-        if (Math.abs(dragDistance) > cardWidth / 4) {
-            if (dragDistance > 0) {
-                slidePrev();
-            } else {
-                slideNext();
-            }
-        } else {
-            // Иначе возвращаем к предыдущей позиции
-            updateSlider();
+        if (Math.abs(dragDistance) > threshold) {
+            // Вычисляем ближайшую позицию слайда
+            const currentCardIndex = Math.round(-currentPosition / (cardWidth + gap));
+            const targetCardIndex = direction > 0 ? Math.max(0, currentCardIndex - 1) : currentCardIndex + 1;
+            
+            // Обновляем текущий слайд и позицию
+            currentSlide = Math.min(Math.max(0, targetCardIndex), cards.length - cardsToShow);
+            currentPosition = -currentSlide * (cardWidth + gap);
         }
+        
+        // Плавно переходим к выбранной позиции
+        updateSlider();
     }
 
     // Обработчик кнопки "Вперед"
