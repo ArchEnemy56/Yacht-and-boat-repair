@@ -58,70 +58,70 @@ document.addEventListener('DOMContentLoaded', function() {
     prevBtn.addEventListener('click', scrollPrev);
 });
 
-    // Элементы модального меню
-    const modalMenu = document.getElementById('modalMenu');
-    const burgerMenuBtn = document.getElementById('burger_menuBtn');
-    const modalCloseBtn = document.getElementById('modalCloseBtn');
+// Элементы модального меню
+const modalMenu = document.getElementById('modalMenu');
+const burgerMenuBtn = document.getElementById('burger_menuBtn');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
 
-    // Функция для открытия модального меню
-    function openModalMenu() {
-        console.log('Opening modal menu'); // Логируем открытие
-        if (modalMenu) {
-            modalMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        } else {
-            console.error('Modal menu element not found');
-        }
-    }
-
-    // Функция для закрытия модального меню
-    function closeModalMenu() {
-        console.log('Closing modal menu'); // Логируем закрытие
-        if (modalMenu) {
-            modalMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    }
-
-    // Обработчики событий
-    if (burgerMenuBtn) {
-        console.log('Burger button found'); // Проверяем, что кнопка найдена
-        burgerMenuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Burger button clicked'); // Логируем клик
-            openModalMenu();
-        });
-    } else {
-        console.error('Burger button not found');
-    }
-
-    if (modalCloseBtn) {
-        modalCloseBtn.addEventListener('click', closeModalMenu);
-    } else {
-        console.error('Close button not found');
-    }
-
-    // Закрытие модального окна при клике вне его области
+// Функция для открытия модального меню
+function openModalMenu() {
+    console.log('Opening modal menu'); // Логируем открытие
     if (modalMenu) {
-        modalMenu.addEventListener('click', function(e) {
-            if (e.target === modalMenu) {
-                closeModalMenu();
-            }
-        });
+        modalMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    } else {
+        console.error('Modal menu element not found');
     }
+}
 
-    // Закрытие модального окна при нажатии клавиши Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modalMenu && modalMenu.classList.contains('active')) {
+// Функция для закрытия модального меню
+function closeModalMenu() {
+    console.log('Closing modal menu'); // Логируем закрытие
+    if (modalMenu) {
+        modalMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Обработчики событий
+if (burgerMenuBtn) {
+    console.log('Burger button found'); // Проверяем, что кнопка найдена
+    burgerMenuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Burger button clicked'); // Логируем клик
+        openModalMenu();
+    });
+} else {
+    console.error('Burger button not found');
+}
+
+if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeModalMenu);
+} else {
+    console.error('Close button not found');
+}
+
+// Закрытие модального окна при клике вне его области
+if (modalMenu) {
+    modalMenu.addEventListener('click', function(e) {
+        if (e.target === modalMenu) {
             closeModalMenu();
         }
     });
+}
 
-    // Обработка кликов по ссылкам в меню
-    const menuLinks = document.querySelectorAll('.modal-menu__nav-list a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', closeModalMenu);
-    });
+// Закрытие модального окна при нажатии клавиши Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modalMenu && modalMenu.classList.contains('active')) {
+        closeModalMenu();
+    }
+});
+
+// Обработка кликов по ссылкам в меню
+const menuLinks = document.querySelectorAll('.modal-menu__nav-list a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', closeModalMenu);
+});
 
 // Кнопка прокрутки вверх
 document.addEventListener('DOMContentLoaded', function() {
@@ -163,4 +163,44 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'auto';
         });
     }
+
+    // Функция поиска по сайту
+    const searchInputs = document.querySelectorAll('.head_1 .input_text');
+    
+    // Список страниц для поиска
+    const pages = [
+        { url: 'index.html', title: 'Главная', keywords: ['главная', 'домой', 'начало'] },
+        { url: 'o-kompanii.html', title: 'О компании', keywords: ['о компании', 'компания', 'о нас'] },
+        { url: 'uslugi.html', title: 'Услуги', keywords: ['услуги', 'сервис', 'работы'] },
+        { url: 'remont.html', title: 'Ремонт', keywords: ['ремонт', 'починка', 'восстановление'] },
+        { url: 'korpus-remont.html', title: 'Ремонт корпуса', keywords: ['корпус', 'кузов', 'ремонт корпуса'] },
+        { url: 'interier.html', title: 'Интерьер', keywords: ['интерьер', 'салон', 'внутренняя отделка'] },
+        { url: 'sezonnye-raboty.html', title: 'Сезонные работы', keywords: ['сезонные работы', 'сезон', 'подготовка'] },
+        { url: 'blog.html', title: 'Блог', keywords: ['блог', 'статьи', 'новости'] },
+        { url: 'kontakty.html', title: 'Контакты', keywords: ['контакты', 'адрес', 'телефон', 'связаться'] }
+    ];
+
+    searchInputs.forEach(input => {
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim().toLowerCase();
+                
+                if (!searchTerm) return;
+                
+                // Ищем страницу, соответствующую запросу
+                const foundPage = pages.find(page => 
+                    page.title.toLowerCase().includes(searchTerm) ||
+                    page.keywords.some(keyword => keyword.includes(searchTerm))
+                );
+                
+                if (foundPage) {
+                    // Если страница найдена, переходим на неё
+                    window.location.href = foundPage.url;
+                } else {
+                    // Если страница не найдена, переходим на 404.html
+                    window.location.href = '404.html';
+                }
+            }
+        });
+    });
 });
