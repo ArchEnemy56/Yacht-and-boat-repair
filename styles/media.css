@@ -154,7 +154,6 @@
             transform: rotate(45deg);
         }
         transform: scale(1.03);
-        transition: var(--smooth-tr);
     }
 
     .service_line_2 {
@@ -1297,11 +1296,6 @@
         align-items: center;
     }
 
-    .modal-menu__content {
-        margin-top: 4vh;
-        min-height: 96vh;
-    }
-
     .line_2_text_right {
         width: 290px;
     }
@@ -1364,6 +1358,11 @@
 
     .why_line {
         max-width: 300px;
+        margin: 30px;
+    }
+
+    .why_line_h3 {
+        margin-bottom: 30px;
     }
 
     .why_brands {

@@ -615,12 +615,18 @@ p {
     transition: var(--smooth-tr);
 }
 
+:is(.service_item_1, .service_item_2, .service_item_3,
+     .service_line_2_left, .service_line_2_right_top,
+     .service_line_2_right_bottom) {
+    transition: var(--smooth-tr);
+    transform: scale(1);
+}
+
 :is(.service_item_1, .service_item_2, .service_item_3, .service_line_2_left, .service_line_2_right_top, .service_line_2_right_bottom):hover {
     .arrow-icon {
         transform: rotate(45deg);
     }
     transform: scale(1.05);
-    transition: var(--smooth-tr);
 }
 
 .service_item_1 {

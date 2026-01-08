@@ -55,16 +55,39 @@ function initCardSlider() {
     // Функция для обработки движения пальца/мыши
     function drag(e) {
         if (!isDragging) return;
+        
+        // Предотвращаем прокрутку страницы при перетаскивании слайдера
+        e.preventDefault();
+        
+        // Проверяем, что это именно горизонтальное перетаскивание
         const x = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
-        const dragDistance = x - startX;
+        const y = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
+        
+        // Вычисляем разницу в пикселях с момента начала перетаскивания
+        const deltaX = x - startX;
+        const deltaY = y - (e.type === 'mousemove' ? e.clientY : e.touches[0].clientY);
+        
+        // Если движение в основном вертикальное, отменяем перетаскивание слайдера
+        if (Math.abs(deltaY) > Math.abs(deltaX)) {
+            isDragging = false;
+            return;
+        }
         
         // Ограничиваем смещение, чтобы не уходить за границы
         const maxPosition = Math.max(0, (cards.length - cardsToShow) * (cardWidth + gap));
-        const newPosition = currentX + dragDistance;
+        const newPosition = currentX + deltaX;
         
         // Разрешаем смещение только в пределах допустимых границ
         if (newPosition <= 0 && newPosition >= -maxPosition) {
             currentPosition = newPosition;
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        } else if (newPosition > 0) {
+            // Эффект сопротивления при достижении начала
+            currentPosition = newPosition * 0.3;
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        } else if (newPosition < -maxPosition) {
+            // Эффект сопротивления при достижении конца
+            currentPosition = -maxPosition + (newPosition + maxPosition) * 0.3;
             slider.style.transform = `translateX(${currentPosition}px)`;
         }
     }
@@ -83,19 +106,32 @@ function initCardSlider() {
         const threshold = cardWidth / 4;
         const direction = Math.sign(dragDistance);
         
+        // Вычисляем индекс текущей карточки
+        const currentCardIndex = Math.round(-currentPosition / (cardWidth + gap));
+        let targetCardIndex;
+        
         // Если свайп был достаточно большим, переключаем слайд
         if (Math.abs(dragDistance) > threshold) {
-            // Вычисляем ближайшую позицию слайда
-            const currentCardIndex = Math.round(-currentPosition / (cardWidth + gap));
-            const targetCardIndex = direction > 0 ? Math.max(0, currentCardIndex - 1) : currentCardIndex + 1;
-            
-            // Обновляем текущий слайд и позицию
-            currentSlide = Math.min(Math.max(0, targetCardIndex), cards.length - cardsToShow);
-            currentPosition = -currentSlide * (cardWidth + gap);
+            targetCardIndex = direction > 0 
+                ? Math.max(0, currentCardIndex - 1) 
+                : Math.min(cards.length - cardsToShow, currentCardIndex + 1);
+        } else {
+            // Если свайп был недостаточным, остаемся на текущей карточке
+            targetCardIndex = Math.min(Math.max(0, currentCardIndex), cards.length - cardsToShow);
         }
         
+        // Обновляем текущий слайд и позицию
+        currentSlide = targetCardIndex;
+        currentPosition = -currentSlide * (cardWidth + gap);
+        
         // Плавно переходим к выбранной позиции
-        updateSlider();
+        requestAnimationFrame(() => {
+            slider.style.transition = 'transform 0.3s ease-in-out';
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        });
+        
+        // Обновляем точки навигации
+        updateDots();
     }
 
     // Обработчик кнопки "Вперед"
