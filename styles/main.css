@@ -625,7 +625,7 @@ p {
 }
 
 .service_item_1 {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-1.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-1.webp);
 }
 
 .service_item_2 {
@@ -675,7 +675,7 @@ p {
 }
 
 .service_line_2_left {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-4.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-4.webp);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -710,7 +710,7 @@ p {
 }
 
 .service_line_2_right_top {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-5.png);
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/image-5.webp);
     display: flex;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1519,16 +1519,16 @@ footer {
 }
 
 .quality_right_1 {
-    background-image: url(../images/quality_right_1.png);
+    background-image: url(../images/quality_right_1.webp);
     background-size: cover;
 }
 
 .quality_right_2 {
-    background-image: url(../images/quality_right_2.png);
+    background-image: url(../images/quality_right_2.webp);
 }
 
 .quality_right_3 {
-    background-image: url(../images/quality_right_3.png);
+    background-image: url(../images/quality_right_3.webp);
 }
 
 .quality_blur {
@@ -2176,7 +2176,7 @@ footer {
     width: 120px;
     height: 120px;
     overflow: hidden;
-    background-image: url("../images/image-4.png");
+    background-image: url("../images/image-4.webp");
     background-size: cover;
     background-position: 0 50%;
 }
