@@ -2891,8 +2891,8 @@ footer {
     height: 353px;
 }
 
-.ml_2 .ml_text,
-.ml_4 .ml_text,
+.sl_2 .ml_text,
+.sl_4 .ml_text,
 .ml_2 .sl_text,
 .ml_4 .sl_text {
     order: 2;
@@ -3059,7 +3059,14 @@ footer {
 .sl_1_img,
 .sl_2_img,
 .sl_3_img,
-.sl_4_img {
+.sl_4_img,
+.kl_1_img,
+.kl_2_img,
+.kl_3_img,
+.kl_4_img,
+.kl_5_img,
+.kl_6_img,
+.kl_7_img {
     border-radius: 20px;
     background-size: cover;
     background-position: center center;
@@ -3120,4 +3127,94 @@ footer {
 .text_left_2 {
     display: flex;
     gap: 6px;
+}
+
+/*new page korpus*/
+
+.korpus{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.4), rgba(102, 102, 102, 0) 100%), url(../images/korpus.webp);
+    margin: 0 0 100px 0;
+    border-radius: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 460px;
+    background-position: 0 50%;
+}
+
+.korpus_title {
+    max-width: 600px;
+}
+
+.korpus_banner_right {
+    background-image: url(../images/nos.webp);
+    background-size: cover;
+    background-position: 100% 0;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 0 20px 20px 0;
+    width: 100%;
+    height: 600px;
+}
+
+.korpus_banner_left {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+    width: 100%;
+    border-radius: 20px;
+    padding: 25px 25px 45px 45px;
+    margin-right: -25px;
+    z-index: 20;
+}
+
+.korpus_line_1_img {
+    background-image: url("../images/image-TO.png");
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-position: 75%;
+}
+
+.sl_text .kl {
+     padding-inline-start: 40px !important;
+ }
+
+.kl_1_img {
+    background-image: url("../images/kl-1.webp");
+    height: 520px;
+}
+
+.kl_2_img {
+    background-image: url("../images/kl-2.webp");
+    height: 564px;
+}
+
+.kl_3_img {
+    background-image: url("../images/kl-3.webp");
+    height: 453px;
+}
+
+.kl_4_img {
+    background-image: url("../images/kl-4.webp");
+    height: 435px;
+}
+
+.kl_5_img {
+    background-image: url("../images/kl-5.webp");
+    height: 457px;
+}
+
+.kl_6_img {
+    background-image: url("../images/kl-6.webp");
+    height: 440px;
+}
+
+.kl_7_img {
+    background-image: url("../images/kl-7.webp");
+    height: 397px;
 }

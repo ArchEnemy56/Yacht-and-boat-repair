@@ -70,6 +70,16 @@
     .err_404 {
         height: 148px;
     }
+
+    .kl_1_img,
+    .kl_2_img,
+    .kl_3_img,
+    .kl_4_img,
+    .kl_5_img,
+    .kl_6_img,
+    .kl_7_img {
+        height: auto;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -565,13 +575,15 @@
         width: 341px;
     }
 
-    .season_banner_left {
+    .season_banner_left,
+    .korpus_banner_left{
         width: calc(100% - 70px);
         margin-top: -30px;
         margin-right: 0;
     }
 
-    .season_banner_right {
+    .season_banner_right,
+    .korpus_banner_right {
         border-radius: 20px 20px 0 0;
     }
 
@@ -1838,6 +1850,39 @@
         order: 2;
     }
 
+    .kl_1 .sl_text,
+    .kl_3 .sl_text,
+    .kl_5 .sl_text,
+    .kl_7 .sl_text {
+        order: 1;
+    }
+
+    .kl_1_img,
+    .kl_3_img,
+    .kl_5_img,
+    .kl_7_img {
+        order: 2;
+    }
+
+    .kl_1_img {
+        height: 216px;
+    }
+
+    .kl_2_img,
+    .kl_3_img {
+        height: 258px;
+    }
+
+    .kl_4_img {
+        height: 252px;
+    }
+
+    .kl_5_img,
+    .kl_6_img,
+    .kl_7_img {
+        height: 267px;
+    }
+
     .modern_info_lines,
     .season_info_lines {
         gap: 50px;
@@ -1859,11 +1904,13 @@
         background-position: 55%;
     }
 
-    .season_line_1_img {
+    .season_line_1_img,
+    .korpus_line_1_img {
         display: none;
     }
 
-    .season_banner_right {
+    .season_banner_right,
+    .korpus_banner_right {
         height: 400px;
     }
 
