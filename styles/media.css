@@ -657,7 +657,7 @@
 
     .hero_info {
         margin-top: 0;
-        width: 300px;
+        width: 223px;
     }
 
     .info_but_wh,
@@ -1312,6 +1312,10 @@
     .sl_1_img,
     .sl_2_img {
         height: 450px;
+    }
+
+    .hero_cards {
+        display: none;
     }
 }
 
