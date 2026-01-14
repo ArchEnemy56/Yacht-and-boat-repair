@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию системных папок
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /config/
+Disallow: /backup/
+
+# Запрещаем индексацию временных файлов и папок
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /*.tmp$
+Disallow: /*.swp$
+
+# Запрещаем индексацию файлов с личными данными
+Disallow: /*.php$
+Disallow: /*.log$
+
+# Указываем путь к карте сайта
+Sitemap: https://nsg-play.com/sitemap.xml
+
+# Указываем хост
+Host: https://nsg-play.com

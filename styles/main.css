@@ -914,6 +914,7 @@ p {
 
 .carousel-container {
     max-width: 1500px;
+    min-height: 528px;
     margin: 40px auto;
     position: relative;
     overflow-x: auto;
@@ -967,6 +968,7 @@ p {
 
 .carousel::-webkit-scrollbar {
     display: none;
+
 }
 
 .carousel {
